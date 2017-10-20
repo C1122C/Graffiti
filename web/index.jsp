@@ -27,10 +27,10 @@
             </div>
             <div class="log-input">
                 <span class="fon">密码</span>
-                <span><input id="password" type="text"/> </span>
+                <span><input id="password" type="password"/> </span>
             </div>
             <div class="log-button">
-                <span><input id="reg-button" class="fon" value="注册" type="button"/></span>
+                <span><a href="register.jsp"><input id="reg-button" class="fon" value="注册" type="button"/></a></span>
                 <span><input id="visit-button" class="fon" value="游览" type="button"/></span>
                 <span><input id="login-button" class="fon" value="登录" type="button"/></span>
             </div>

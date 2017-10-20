@@ -6,6 +6,15 @@ body{
     text-align:center;
 }
 
+textarea{
+    font-family: "微软雅黑","仿宋";
+    font-size: 20px;
+    height: 150px;
+    width: 750px;
+    background-color:rgba(255,255,255,0.5);
+    border-radius: 5%;
+}
+
 .icon{
     margin-top: 80px;
 }
@@ -16,12 +25,24 @@ body{
 }
 
 .log-pan{
+     vertical-align: text-bottom;
+     height: 55%;
+     width: 40%;
+     background-color: rgba(255,255,255,0.5);
+     border-radius: 20%;
+     text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+.reg-pan{
+    margin-top: 50px;
     vertical-align: text-bottom;
-    height: 55%;
-    width: 40%;
+    height: 80%;
+    width: 65%;
     background-color: rgba(255,255,255,0.5);
-    border-radius: 20%;
-    text-align: center;
+    border-radius: 10%;
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
 }
@@ -29,6 +50,25 @@ body{
 .log-input,.log-button{
     vertical-align: bottom;
     margin-top: 40px;
+}
+
+.reg-input{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.reg-fon{
+    font-family: "微软雅黑","仿宋";
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.reg-text{
+    height: 50px;
+    width: 200px;
+    background-color:rgba(255,255,255,0.5);
+    margin-left: 10px;
+    border-width: 0px;
 }
 
 
@@ -51,6 +91,18 @@ body{
 #visit-button{
     margin-left: 35px;
     margin-right: 35px;
+}
+
+#register,#cancle{
+    font-family: "微软雅黑","仿宋";
+    font-size: 35px;
+    border-radius: 20%;
+    background-color:rgba(0,0,0,0.4);
+    border-width: 0px;
+    height: 65px;
+    width: 100px;
+    margin-right: 35px;
+    margin-top: 20px;
 }
 
 

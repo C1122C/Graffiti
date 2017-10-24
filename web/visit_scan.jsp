@@ -20,8 +20,8 @@
         <div class="v_topbar">
             <ul class="v_top_ul">
                 <li><a href="index.jsp">首页</a></li>
-                <li class="selected"><a href="visit_scan.jsp">看图</a></li>
-                <li><a href="">找图</a></li>
+                <li><a href="visit_scan.jsp" class="selected">看图</a></li>
+                <li><a href="visit_search.jsp">找图</a></li>
             </ul>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <div id="wall_body" class="wall">
         <div class="col0">
             <div class="card">
-                <div style="height: 100px;"></div>
+                <div style="height: 30px;"></div>
                 <div class="img" onclick="">
                     <img src="./img/IMG_0004.JPG" onload="" width="300"/>
                 </div>
@@ -42,7 +42,7 @@
                     <div class="like_icon" style="float: left;"><img src="./img/like_unclicked.png"/></div>
                     <div class="like_num" style="float: left;"><p>266人喜欢</p></div>
                 </div>
-                <div style="height: 30px;"></div>
+                <div style="height: 60px;"></div>
             </div>
             <div class="card">
                 <div style="height: 30px;"></div>
@@ -55,8 +55,10 @@
                     </div>
                 </div>
                 <div class="like">
-                    <span class="like_icon"><img src="./img/like_unclicked.png"/><p class="like_num">198人喜欢</p></span>
+                    <div class="like_icon" style="float: left;"><img src="./img/like_unclicked.png"/></div>
+                    <div class="like_num" style="float: left;"><p>266人喜欢</p></div>
                 </div>
+                <div style="height: 60px;"></div>
             </div>
         </div>
         <div class="col1">
@@ -71,8 +73,10 @@
                     </div>
                 </div>
                 <div class="like">
-                    <span class="like_icon"><img src="./img/like_unclicked.png"/><p class="like_num">34人喜欢</p></span>
+                    <div class="like_icon" style="float: left;"><img src="./img/like_unclicked.png"/></div>
+                    <div class="like_num" style="float: left;"><p>266人喜欢</p></div>
                 </div>
+                <div style="height: 60px;"></div>
             </div>
             <div class="card">
                 <div style="height: 30px;"></div>
@@ -85,8 +89,10 @@
                     </div>
                 </div>
                 <div class="like">
-                    <span class="like_icon"><img src="./img/like_unclicked.png"/><p class="like_num">6人喜欢</p></span>
+                    <div class="like_icon" style="float: left;"><img src="./img/like_unclicked.png"/></div>
+                    <div class="like_num" style="float: left;"><p>266人喜欢</p></div>
                 </div>
+                <div style="height: 60px;"></div>
             </div>
         </div>
         <div class="col2">
@@ -101,8 +107,10 @@
                     </div>
                 </div>
                 <div class="like">
-                    <span class="like_icon"><img src="./img/like_unclicked.png"/><p class="like_num">21人喜欢</p></span>
+                    <div class="like_icon" style="float: left;"><img src="./img/like_unclicked.png"/></div>
+                    <div class="like_num" style="float: left;"><p>266人喜欢</p></div>
                 </div>
+                <div style="height: 60px;"></div>
             </div>
             <div class="card">
                 <div style="height: 30px;"></div>
@@ -115,8 +123,10 @@
                     </div>
                 </div>
                 <div class="like">
-                    <span class="like_icon"><img src="./img/like_unclicked.png"/><p class="like_num">2人喜欢</p></span>
+                    <div class="like_icon" style="float: left;"><img src="./img/like_unclicked.png"/></div>
+                    <div class="like_num" style="float: left;"><p>266人喜欢</p></div>
                 </div>
+                <div style="height: 60px;"></div>
             </div>
         </div>
     </div>

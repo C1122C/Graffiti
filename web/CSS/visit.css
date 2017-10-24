@@ -87,7 +87,6 @@ a{
     width: 100%;
     min-height:600px;
     zoom:1;
-    margin-left: 80px;
     margin-right: 80px;
     padding-left: 80px;
 }
@@ -103,9 +102,9 @@ a{
 .col0,.col1,.col2{
     opacity:1;
     float:left;
-    width:28%;
+    width:29%;
     *width:242px;
-    padding-left:13px;
+    padding-left:20px;
     box-sizing:border-box;
     text-align:center;
 }
@@ -120,7 +119,8 @@ a{
     width: 350px;
     background-color: #FDFDFD;
     border-radius: 5%;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -165,4 +165,34 @@ a{
     font-size: 10px;
     color: rgba(151,149,149,0.5);
     margin-left: 80px;
+}
+
+.input_text{
+    height: 45px;
+    width: 35%;
+    font-family: "微软雅黑", "仿宋";
+    font-size: 18px;
+    display: inline;
+    margin-right: -10px;
+    vertical-align: bottom;
+    border-radius: 5px;
+    border-width: 0px;
+}
+
+.input_button{
+    height: 45px;
+    display: inline;
+    width: 50px;
+    background-image: url(../img/search.png);
+    background-repeat: no-repeat;
+    margin-left: -45px;
+    vertical-align: bottom;
+    border-radius: 5px;
+    border-width: 0px;
+}
+
+.search_bar{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 90px;
 }

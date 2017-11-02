@@ -21,7 +21,7 @@
                 <ul class="v_top_ul">
                     <li><a href="index.jsp">首页</a></li>
                     <li><a href="visit_scan.jsp">看图</a></li>
-                    <li><a href="visit_search.jsp" class="selected">找图</a></li>
+                    <li><a href="visit_search.jsp" style="border-bottom-color:#fff">找图</a></li>
                 </ul>
             </div>
         </div>

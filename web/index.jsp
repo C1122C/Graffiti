@@ -32,7 +32,7 @@
             <div class="log-button">
                 <span><a href="register.jsp"><input id="reg-button" class="fon" value="注册" type="button"/></a></span>
                 <span><a href="visit_scan.jsp"><input id="visit-button" class="fon" value="游览" type="button"/></a></span>
-                <span><input id="login-button" class="fon" value="登录" type="button"/></span>
+                <span><a href="user_index.jsp"><input id="login-button" class="fon" value="登录" type="button"/></a></span>
             </div>
         </div>
     </body>

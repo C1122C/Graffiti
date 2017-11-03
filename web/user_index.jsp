@@ -34,11 +34,11 @@
                 <div id="inform" class="inform_div">
                     <div id="inform_window" class="inform_w">
                        <div class="inform_tag">
-                           <div class="inform_title">
-                               <span style="background-image: url(./img/letter.png);background-repeat: no-repeat;height: 40px;"></span>
+                           <div class="inform_title" style="display: block">
+                               <span class="letter"><img src="./img/letter.png" width="30px"></span>
                                <h3>新消息</h3>
                            </div>
-                           <div class="inform_body">
+                           <div class="inform_body" style="display:block;">
                                <ul class="i_ul">
                                    <li>
                                        <a href="">1条通知</a>
@@ -53,7 +53,7 @@
                 <div class="list">
                     <div class="portrait">
                         <a href="" target="_blank">
-                            <img src="img/IMG_7965.JPG" width="40px">
+                            <img src="img/IMG_7965.JPG" width="65px">
                         </a>
                     </div>
                     <div class="content">
@@ -61,10 +61,10 @@
                         <div class="talk_body">
                             <div class="work">
                                 <div class="cnt">
-                                    <div>
-                                        <div class="pic" style="height: 250px;">
-                                            <a href="#" hidefocus="true">
-                                                <img src="./img/IMG_0004.JPG" width="164px">
+                                    <div style="opacity:1;float:left;width:50%;padding-left:20px;box-sizing:border-box;text-align:center;">
+                                        <div class="pic" style="height: 250px;width: 300%">
+                                            <a href="#" hidefocus="true" style="width: 100%;">
+                                                <img src="./img/IMG_0004.JPG" width="200px">
                                             </a>
                                         </div>
                                         <ol style="display: none">
@@ -88,7 +88,7 @@
                                             <p>2017.11.2 &nbsp 南京</p>
                                         </blockquote>
                                     </div>
-                                    <div class="text" style="display: block">
+                                    <div class="text">
                                         <blockquote>
                                             <p>
                                                 大雨落幽燕，白浪滔天，秦皇岛外打鱼船，一片汪洋都不见，知向谁边<br>
@@ -111,7 +111,7 @@
                                     <span class="opti"><a class="add_like"></a></span>
                                 </div>
                             </div>
-                            <div class="c_body">
+                            <!--<div class="c_body">
                                 <div>
                                     <div class="shadow"></div>
                                     <div class="c_min">
@@ -121,11 +121,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
-                <div class="list">
+                <!--<div class="list">
                     <div class="portrait">
                         <a href="" target="_blank">
                             <img src="img/IMG_7965.JPG" width="40px">
@@ -274,9 +274,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
-            <div id="side" class="side_bar">
+            <!--<div id="side" class="side_bar">
                 <div class="g_box">
                     <div class="menum">
                         <ul>
@@ -311,10 +311,13 @@
                             <a href="" target="_blank" class="por"><img src="../img/IMG_7956.JPG" width="80px"></a>
                             <a href="">琪琪</a>
                         </div>
-                        <a class="follow_button"></a>
+                        <a class="follow_button">
+                            <span class="fol1">关</span>
+                            <span class="fol1">注</span>
+                        </a>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
 
     </body>

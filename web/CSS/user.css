@@ -310,7 +310,7 @@ a{
     zoom:1;
     padding:3px 32px 28px 53px;
     width: 585px;
-    height:280px;
+    height:400px;
     margin-top: -1px;
     border-width: 0px;
     margin-left: 75px;
@@ -352,8 +352,10 @@ a{
 }
 
 .clickBig{
-    margin:6px 0 0;
-    font-family: 仿宋;
+    float:left;
+    margin-top: 10px;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
     display:inline-block;
     height:21px;
 }
@@ -416,29 +418,30 @@ a{
     margin-left: 100px;
 }
 
-.add_like{
-    background: url(../img/like_unclicked.png) no-repeat;
-}
 
 .c_body{
     display:block;
     visibility:visible\9;
     opacity:1;
-    position:relative;
     overflow:hidden;
     zoom:1;
     margin-top: 0px;
+    font-family:"Hiragino Sans GB","Microsoft YaHei";
+    position:relative;
+    z-index:3;
+    height:19px;
+    line-height:19px;
+    color:#aaa;
+    margin-left: 0px;
+    width: 100%;
 }
 
 .shadow{
-    height:1px;
-    overflow:hidden;
-    border-top:1px solid #c8c8c8;
-    border-bottom:1px solid #f1f1f1;
-    background:#e1e1e1;
+    background:#c8c8c8;
 }
 
 .c_min{
+    height: 30px;
     padding:1px 0;
     zoom:1;
     background:#fafafa;
@@ -460,7 +463,9 @@ a{
 }
 
 .c_button{
-    position:absolute;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei";
+    font-size: 20px;
+    position:relative;
     right:-10px;
     top:50%;
     margin:-20px 0 0;

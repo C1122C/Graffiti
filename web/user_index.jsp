@@ -74,7 +74,7 @@
                                                         <img src="./img/IMG_0004.JPG" width="500px">
                                                     </a>
                                                 </div>
-                                                <div><a onclick="" class="clickBig">查看大图</a> </div>
+                                                <div><a onclick="" class="clickBig">查看大图</a></div>
                                                 <p></p>
                                             </li>
                                         </ol>
@@ -108,20 +108,26 @@
                                 <div class="comment">
                                     <span class="opti">热度（111）</span>
                                     <span class="opti"><a>评论</a></span>
-                                    <span class="opti"><a class="add_like"></a></span>
+                                    <span class="opti" style="margin-left: -5px;margin-top: -18px">
+                                        <a>
+                                            <img src="./img/like_unclicked.png">
+                                        </a>
+                                    </span>
                                 </div>
                             </div>
-                            <!--<div class="c_body">
+                            <div class="c_body">
                                 <div>
                                     <div class="shadow"></div>
                                     <div class="c_min">
-                                        <div>
-                                            <div class="c_input" maxlength="200" contenteditable="true"></div>
-                                            <button class="c_button"></button>
-                                        </div>
+                                        <form>
+                                            <div class="c_input">
+                                                <input type="text" maxlength="200">
+                                            </div>
+                                            <input type="submit" class="c_button">发布</input>
+                                        </form>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>
                         </div>
                     </div>
                 </div>

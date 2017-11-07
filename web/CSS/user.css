@@ -174,7 +174,7 @@ a{
 .input_text{
     height: 45px;
     width: 35%;
-    font-family: "微软雅黑", "仿宋";
+    font-family:"Microsoft YaHei";
     font-size: 18px;
     display: inline;
     margin-right: -10px;
@@ -198,7 +198,7 @@ a{
 .search_bar{
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left: 90px;
+    margin-left: 95px;
 }
 
 .main_b{

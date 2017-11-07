@@ -28,7 +28,7 @@
 
         <div class="search_bar">
             <form id="search">
-                <input type="text" class="input_text" value="输入分类、作者或描述查找图片"/>
+                <input type="text" class="input_text" value="  输入分类、作者或描述查找图片"/>
                 <input type="submit" class="input_button" value=""/>
             </form>
         </div>

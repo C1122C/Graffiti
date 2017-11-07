@@ -62,9 +62,9 @@
                             <div class="work">
                                 <div class="cnt">
                                     <div style="opacity:1;float:left;width:50%;padding-left:20px;box-sizing:border-box;text-align:center;">
-                                        <div class="pic" style="height: 250px;width: 300%">
+                                        <div class="pic" style="margin-top:10px;margin-left:-350px;max-height: 250px;width: 300%">
                                             <a href="#" hidefocus="true" style="width: 100%;">
-                                                <img src="./img/IMG_0006.JPG" width="200px">
+                                                <img src="./img/IMG_0006.JPG" width="250px">
                                             </a>
                                         </div>
                                         <ol style="display: none">
@@ -134,9 +134,9 @@
                             <div class="work">
                                 <div class="cnt">
                                     <div style="opacity:1;float:left;width:50%;padding-left:20px;box-sizing:border-box;text-align:center;">
-                                        <div class="pic" style="height: 250px;width: 300%">
+                                        <div class="pic" style="margin-top:10px;margin-left:-350px;max-height: 250px;width: 300%">
                                             <a href="#" hidefocus="true" style="width: 100%;">
-                                                <img src="./img/IMG_0007.JPG" width="200px">
+                                                <img src="./img/IMG_0007.JPG" width="250px">
                                             </a>
                                         </div>
                                         <ol style="display: none">
@@ -206,9 +206,9 @@
                             <div class="work">
                                 <div class="cnt">
                                     <div style="opacity:1;float:left;width:50%;padding-left:20px;box-sizing:border-box;text-align:center;">
-                                        <div class="pic" style="height: 250px;width: 300%">
+                                        <div class="pic" style="margin-top:10px;margin-left:-350px;max-height: 250px;width: 300%">
                                             <a href="#" hidefocus="true" style="width: 100%;">
-                                                <img src="./img/IMG_0022.JPG" width="200px">
+                                                <img src="./img/IMG_0022.JPG" width="250px">
                                             </a>
                                         </div>
                                         <ol style="display: none">
@@ -278,9 +278,9 @@
                             <div class="work">
                                 <div class="cnt">
                                     <div style="opacity:1;float:left;width:50%;padding-left:20px;box-sizing:border-box;text-align:center;">
-                                        <div class="pic" style="height: 250px;width: 300%">
+                                        <div class="pic" style="margin-top:10px;margin-left:-350px;max-height: 250px;width: 300%">
                                             <a href="#" hidefocus="true" style="width: 100%;">
-                                                <img src="./img/IMG_0024.JPG" width="200px">
+                                                <img src="./img/IMG_0024.JPG" width="250px">
                                             </a>
                                         </div>
                                         <ol style="display: none">

@@ -84,6 +84,7 @@ a{
 }
 
 .wall{
+    margin-top: 20px;
     width: 100%;
     min-height:600px;
     zoom:1;
@@ -118,7 +119,7 @@ a{
 .card{
     width: 350px;
     background-color: #FDFDFD;
-    border-radius: 5%;
+    border-radius: 2%;
     margin-top: 15px;
     margin-bottom: 10px;
     text-align: center;

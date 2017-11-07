@@ -26,6 +26,7 @@
         </div>
     </div>
 
+    <div style="height: 30px;"></div>
     <div id="wall_body" class="wall">
         <div class="col0">
             <div class="card">

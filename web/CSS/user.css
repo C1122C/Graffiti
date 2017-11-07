@@ -310,7 +310,7 @@ a{
     zoom:1;
     padding:3px 32px 28px 53px;
     width: 585px;
-    height:400px;
+    height:350px;
     margin-top: -1px;
     border-width: 0px;
     margin-left: 75px;
@@ -419,34 +419,6 @@ a{
 }
 
 
-.c_body{
-    display:block;
-    visibility:visible\9;
-    opacity:1;
-    overflow:hidden;
-    zoom:1;
-    margin-top: 0px;
-    font-family:"Hiragino Sans GB","Microsoft YaHei";
-    position:relative;
-    z-index:3;
-    height:19px;
-    line-height:19px;
-    color:#aaa;
-    margin-left: 0px;
-    width: 100%;
-}
-
-.shadow{
-    background:#c8c8c8;
-}
-
-.c_min{
-    height: 30px;
-    padding:1px 0;
-    zoom:1;
-    background:#fafafa;
-}
-
 .c_input{
     border:1px solid #cececf;
     outline:none;
@@ -460,23 +432,25 @@ a{
     word-wrap:break-word;
     word-break:break-all;
     padding-right:29px;
+    text-align: left;
 }
 
 .c_button{
-    font-family: "Hiragino Sans GB", "Microsoft YaHei";
-    font-size: 20px;
+    font-family:"Microsoft YaHei";
+    font-size: 25px;
+    font-weight: 600;
     position:relative;
-    right:-10px;
     top:50%;
-    margin:-20px 0 0;
+    margin-top: -9px;
+    margin-left: 2px;
     width:104px;
     height:40px;
     background-color: #7fa900;
     border:0;
     font-size:16px;
-    text-shadow:-1px -1px 1px #fff;
+    color: white;
     cursor:pointer;
-    float:right;
+    float:left;
 }
 
 .c_button:hover{
@@ -484,26 +458,31 @@ a{
 }
 
 .side_bar{
-    float:right;
-    width:230px;
-    margin-right: 20px;
+    margin-top: 15px;
+    float:left;
+    width:280px;
     opacity:1;
     box-sizing:border-box;
     text-align:center;
 }
 
 .g_box{
-    padding:0 0 12px;
+    position: relative;
+    margin-bottom: 10px;
 }
 
 .menum{
     background-color: #f3f3f3;
     zoom:1;
-    padding:0 2px;
+    border-width: 1px;
+    border-color: white;
+    height:120px;
+    text-align: center;
 }
 
 .mi{
     float:left;
+    margin-left: -20px;
     width:100%;
     height:18px;
     overflow:hidden;
@@ -511,44 +490,52 @@ a{
     border-top:1px solid #fff;
     line-height:15px;
     font-size:14px;
+    text-align: center;
 }
 
-.ask_icon{
-    background: url(../img/ask_s.png) no-repeat;
-}
-
-.inform_icon{
-    background: url(../img/inform.png) no-repeat;
-}
-
-.chat_icon{
-    background: url(../img/chat.png) no-repeat;
-}
 
 .txt{
+    float:left;
+    margin-left:18px;
     font-size: 14px;
     font-family: "Hiragino Sans GB", "Microsoft YaHei";
 }
 
+.txt1{
+    float:left;
+    margin-left:18px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family:"Microsoft YaHei";
+    color: #9ac600;
+}
+
 .new_inf{
     float: right;
-    background: url(../img/new.png) no-repeat;
+    margin-right:15px;
 }
 
 .guess_like{
+    margin-top: 15px;
     background-color: #ffffff;
+    height: 260px;
+    text-align: center;
 }
 
 .like_head{
     position:relative;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .por{
     display:block;
     position:relative;
-    width:64px;
-    height:64px;
-    margin:0 auto;
+    width:100px;
+    height:100px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .portrait{
@@ -557,8 +544,10 @@ a{
 }
 
 .por img{
-    width:64px;
-    height:64px;
+    width:100px;
+    height:100px;
+    margin-left: 90px;
+
 }
 
 .follow_button{
@@ -566,11 +555,11 @@ a{
     width:240px;
     height:38px;
     line-height:38px;
-    margin:0 auto;
     font-size:18px;
-    background:url(../img/add.png) 88px -2089px no-repeat;
     border:1px solid #cdcdcd;
     border-radius:5px;
+    margin-top: 10px;
+    margin-left: 20px;
     color:#9ac600;
 }
 

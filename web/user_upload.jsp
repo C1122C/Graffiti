@@ -32,8 +32,8 @@
         <div class="upload_pan">
             <div style="height: 40px;"></div>
             <div class="up_col">
-                <a><div class="photo_click" onclick=""></div></a>
-                <div class="photo_list" style="display: none">
+                <a><div class="photo_click" onclick="" style="display: none"></div></a>
+                <div class="photo_list">
                     <div class="photo_queue">
                         <div class="photo_small">
                             <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="">
@@ -55,12 +55,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="add_bar" onclick="" style="display: none">
+                <div class="add_bar" onclick="">
                     <div class="add_button">
                         <div class="add_icon">
-                            <img src="./img/add.png" width="18px" height="20px">
+                            <img src="./img/add.png" width="38px" height="40px">
                         </div>
-                        <div class="add_text">继续添加</div>
+                        <div class="add_text">继 续 添 加</div>
                     </div>
                 </div>
             </div>

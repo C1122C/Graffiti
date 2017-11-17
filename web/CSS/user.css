@@ -621,6 +621,7 @@ a{
     padding-left:20px;
     box-sizing:border-box;
     text-align:left;
+    overflow: hidden;
 }
 
 .photo_click{
@@ -634,17 +635,25 @@ a{
 }
 
 .photo_list{
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     padding-bottom: 5px;
-    margin-bottom: 15px;
-    height: 400px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    min-height: 210px;
     opacity: 1;
     position: relative;
 }
 
+.photo_list::-webkit-scrollbar{
+    display: none;
+}
+
 .photo_queue{
-    height: 300px;
-    overflow:visible;
+    min-height: 210px;
+    overflow:hidden;
+    padding: 0;
+    opacity: 3;
 }
 
 .photo_small{
@@ -653,34 +662,50 @@ a{
     -moz-transition:all 0.2s linear;
     -o-transition:all 0.2s linear;
     opacity: 1;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .add_bar{
-    width: 95%;
+    width: 80%;
     height: 80px;
     position: relative;
     opacity: 1;
     border: 1px dashed #dfdfdf;
     text-align: center;
+    margin-left: 33px;
+    margin-top: 5px;
 }
 
 .add_button{
-    width: 100px;
-    height:30px;
+    min-width: 100px;
+    min-height:80px;
     line-height: 30px;
     color: #444;
-    font-size: 12px;
+    font-size: 25px;
     font-family: "Hiragino Sans GB","Microsoft YaHei";
+    text-align: center;
+    opacity: 2;
 }
 
 .add_icon{
-    width: 20px;
-    height: 20px;
+    float:left;
+    width: 40px;
+    height: 40px;
     position: relative;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
 .add_text{
+    float: left;
     margin-left: 15px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    vertical-align: middle;
+    position: relative;
 }
 
 .tag_div{

@@ -67,12 +67,15 @@
             <div class="up_col">
                 <div class="tip_text"><span>标 签: </span></div>
                 <div class="tag_div">
-                    <input class="tag_input" maxlength="20" value="         添加标签，以逗号分隔">
+                    <div class="tag_input">
+                        <input class="tag_input_inner" maxlength="20" placeholder="添加标签，以逗号分隔">
+                    </div>
                 </div>
                 <div style="height: 20px;"></div>
                 <div class="tip_text"><span>描 述: </span></div>
                 <div class="des_editor">
-                    <div class="publish_editor" contenteditable="true">
+                    <div class="publish_editor">
+                        <div class="write_board" contenteditable="true"></div>
                     </div>
                 </div>
                 <div class="up_button_div">

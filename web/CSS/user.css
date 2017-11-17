@@ -702,6 +702,18 @@ a{
     background: rgba(255,255,255,0.6) url(../img/tag_s.png);
     background-position: left;
     background-repeat: no-repeat;
+    text-align: right;
+}
+
+.tag_input_inner{
+    min-height: 30px;
+    width: 95%;
+    min-width: 50px;
+    line-height: 35px;
+    margin-left: 10px;
+    background:rgba(255,255,255,0);
+    background-size: 100% 100%;
+    border: 0;
 }
 
 .des_editor{
@@ -710,11 +722,26 @@ a{
     border: solid 1px #dfdfdf;
     color: #444;
     font-size: 12px;
-    text-align: left;
+    text-align: center;
     font-family: "Hiragino Sans GB","Microsoft YaHei";
     background: #fff;
     border-radius: 5%;
     width:90%;
+}
+
+.write_board{
+    position: relative;
+    text-align: left;
+    border: 0;
+    min-width: 310px;
+    min-height: 160px;
+    max-width: 310px;
+    max-height: 160px;
+    margin: 20px 18px 20px 18px;
+}
+
+.write_board:focus{
+    border: 0;
 }
 
 .publish_editor{

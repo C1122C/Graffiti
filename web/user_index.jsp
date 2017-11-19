@@ -24,7 +24,7 @@
                     <li><a href="i_pie.jsp">爱拍</a></li>
                     <li><a href="find_a_partner.jsp" >约拍</a></li>
                     <li><a href="talk.jsp" >关注</a></li>
-                    <li><a href="mine.jsp">我的</a></li>
+                    <li><a href="mine.jsp">消息</a></li>
                 </ul>
             </div>
         </div>
@@ -374,6 +374,14 @@
                                     <span class="new_inf">
                                         <img src="./img/new.png">
                                     </span>
+                                </a>
+                            </li>
+                            <li style="border-color: #b2b2b2;">
+                                <a href="" class="mi">
+                                    <span class="txt">
+                                        <img src="./img/person.png">
+                                    </span>
+                                    <span class="txt">个人信息修改</span>
                                 </a>
                             </li>
                         </ul>

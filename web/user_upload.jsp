@@ -15,19 +15,6 @@
         <link href="./CSS/user.css" rel="stylesheet">
     </head>
     <body style="background-image: url(./img/upload_back.jpg);background-size:100% 100%;">
-        <div class="v_headbar">
-            <span class="logo"><a href="index.jsp"></a> </span>
-            <div class="v_topbar">
-                <ul class="v_top_ul">
-                    <li><a href="user_index.jsp">首页</a></li>
-                    <li><a href="user_scan.jsp">看图</a></li>
-                    <li><a href="user_search.jsp">找图</a></li>
-                    <li><a href="user_upload.jsp"  style="border-bottom-color:#fff">爱拍</a></li>
-                    <li><a href="find_a_partner.jsp" >约拍</a></li>
-                    <li><a href="mine.jsp">我的</a></li>
-                </ul>
-            </div>
-        </div>
         <div style="height: 50px;width: 100%"></div>
         <div class="upload_pan">
             <div style="height: 40px;"></div>
@@ -72,19 +59,28 @@
                     </div>
                 </div>
                 <div style="height: 20px;"></div>
-                <div class="tip_text"><span>描 述: </span></div>
+                <div style="opacity: 2;margin-bottom: 10px;">
+                    <div class="tip_text" style="float: left"><span>相 册: </span></div>
+                    <select class="select_bar">
+                        <option>album1</option>
+                        <option>album2</option>
+                        <option>album3</option>
+                    </select>
+                </div>
+                <div style="height: 50px;"></div>
+                <div class="tip_text" style="margin-bottom: 5px"><span>描 述: </span></div>
                 <div class="des_editor">
                     <div class="publish_editor">
                         <div class="write_board" contenteditable="true"></div>
                     </div>
                 </div>
                 <div class="up_button_div">
-                    <button class="cancle_button" hidefocus="true">
+                    <a href="i_pie.jsp"><button class="cancle_button" hidefocus="true">
                         <span>取 消</span>
-                    </button>
-                    <button class="pub_button">
+                    </button></a>
+                    <a href="i_pie.jsp"><button class="pub_button">
                         <span>发 布</span>
-                    </button>
+                    </button></a>
                 </div>
             </div>
         </div>

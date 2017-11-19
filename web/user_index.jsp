@@ -21,9 +21,9 @@
                 <ul class="v_top_ul">
                     <li><a href="user_index.jsp" style="border-bottom-color:#fff">首页</a></li>
                     <li><a href="user_scan.jsp" >看图</a></li>
-                    <li><a href="user_search.jsp">找图</a></li>
-                    <li><a href="user_upload.jsp">爱拍</a></li>
+                    <li><a href="i_pie.jsp">爱拍</a></li>
                     <li><a href="find_a_partner.jsp" >约拍</a></li>
+                    <li><a href="talk.jsp" >论坛</a></li>
                     <li><a href="mine.jsp">我的</a></li>
                 </ul>
             </div>

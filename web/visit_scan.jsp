@@ -21,12 +21,18 @@
             <ul class="v_top_ul">
                 <li><a href="index.jsp">首页</a></li>
                 <li><a href="visit_scan.jsp" style="border-bottom-color:#fff">看图</a></li>
-                <li><a href="visit_search.jsp">找图</a></li>
             </ul>
         </div>
     </div>
 
     <div style="height: 30px;"></div>
+    <div class="search_bar">
+        <form id="search">
+            <input type="text" class="input_text" value="  输入分类、作者或描述查找图片"/>
+            <input type="submit" class="input_button" value=""/>
+        </form>
+    </div>
+
     <div id="wall_body" class="wall">
         <div class="col0">
             <div class="card">

@@ -128,6 +128,7 @@ a{
     margin-top: 15px;
     margin-bottom: 10px;
     text-align: center;
+    min-height: 500px;
 }
 
 .card.img{
@@ -440,7 +441,6 @@ a{
 
 .c_button{
     font-family:"Microsoft YaHei";
-    font-size: 25px;
     font-weight: 600;
     position:relative;
     top:50%;
@@ -898,4 +898,128 @@ a{
     float: left;
     margin-left: 20px;
     margin-top: 5px;
+}
+
+.search_win{
+    float: left;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.search_win select,.search_win input{
+    line-height: 25px;
+    height: 25px;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 5px;
+}
+
+.search_down{
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 100px;
+    min-height: 40px;
+}
+
+.search_down input{
+    margin-top: 15px;
+    line-height: 30px;
+    height: 30px;
+    float: left;
+    position: relative;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-left: 10px;
+    box-shadow: none;
+    border:1px solid #cdcdcd;
+}
+
+.search_tip{
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    position: relative;
+    float: left;
+    font-weight: 600;
+}
+
+.announce_col{
+    opacity:1;
+    float:left;
+    width:30%;
+    *width:242px;
+    padding-left:20px;
+    box-sizing:border-box;
+    text-align:center;
+}
+
+.op_mark{
+    display:block;
+    width:240px;
+    height:38px;
+    line-height:38px;
+    font-size:18px;
+    border:0;
+    margin-top: 10px;
+    margin-left: 20px;
+    color:#9ac600;
+}
+
+.announce_des{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    margin-left: 5px;
+    line-height:1.6;
+    word-wrap:break-word;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+
+.a_card{
+    width: 350px;
+    background-color: #FDFDFD;
+    border-radius: 2%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    min-height: 330px;
+    opacity: 1;
+}
+
+.a_tag{
+    display:block;
+    width:90px;
+    height:38px;
+    line-height:38px;
+    font-size:18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color:#9ac600;
+}
+
+.a_cancle_btn{
+    font-family:"Microsoft YaHei";
+    position:relative;
+    top:50%;
+    margin-top: -9px;
+    margin-left: 2px;
+    background-color: #888;
+    border:0;
+    color: white;
+    cursor:pointer;
+    font-size: 18px;
+    font-weight: 600;
+    width:80px;
+    height:30px;
+    float:right;
+    margin-right: 20px;
+    border-radius: 5px;
 }

@@ -164,7 +164,7 @@
                             <span style="margin-left: 0px;margin-right: 0px;">关</span>
                             <span style="margin-left: 5px;margin-right: 0px;">注</span>
                         </a>
-                    </span>
+                </span>
             </div>
             <div class="img" onclick="">
                 <img src="./img/IMG_0006.JPG" onload="" width="300"/>

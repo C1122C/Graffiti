@@ -1023,3 +1023,85 @@ a{
     margin-right: 20px;
     border-radius: 5px;
 }
+
+.t_board{
+    width: 80%;
+    min-width: 80%;
+    min-height: 300px;
+    padding: 0;
+    margin-top: 20px;
+    margin-left: 80px;
+    opacity: 2;
+}
+
+.t_people{
+    min-width: 850px;
+    float: left;
+    padding: 0;
+    margin:0;
+    font-size: 12px;
+    color: #444;
+    opacity: 3;
+}
+
+.t_group{
+    margin-top: 28px;
+    min-width: 220px;
+    float: left;
+    padding: 0;
+    z-index: 11;
+    font-size: 12px;
+    color: #444;
+    opacity: 1;
+    margin-left: -10px;
+    text-align: left;
+    font-family: "Hiragino Sans GB";
+    border-color: #EDEDED;
+    border-width: 1px;
+}
+
+.t_col{
+    min-width: 280px;
+    float: left;
+    padding: 0;
+    margin-right: 0px;
+}
+
+.t_follow{
+    margin-top: 0px;
+    margin-bottom: -30px;
+    background-color: #ffffff;
+    height: 260px;
+    text-align: center;
+}
+
+.unfollow_txt{
+    margin-left:21px;
+    margin-right:6px;
+    color: #888;
+}
+
+.t_group li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #f8f8f8;
+    border: 1px solid #ededed;
+}
+
+.t_group li:checked{
+    background-color: #808080;
+}
+
+.t_group li:hover{
+    background-color: white;
+}
+
+.t_group a{
+    display: block;
+    padding: 12px 30px 10px 50px;
+    height: 20px;
+    line-height: 20px;
+}

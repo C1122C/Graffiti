@@ -8,48 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title>Graffiti</title>
+        <title>张三</title>
         <meta name="keywords" content="摄影，图片">
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/user.css" rel="stylesheet">
     </head>
     <body>
-        <div class="v_headbar">
-            <span class="logo"><a href="index.jsp"></a> </span>
-            <div class="v_topbar">
-                <ul class="v_top_ul">
-                    <li><a href="user_index.jsp" style="border-bottom-color:#fff">首页</a></li>
-                    <li><a href="user_scan.jsp" >看图</a></li>
-                    <li><a href="i_pie.jsp">爱拍</a></li>
-                    <li><a href="find_a_partner.jsp" >约拍</a></li>
-                    <li><a href="talk.jsp" >关注</a></li>
-                    <li><a href="mine.jsp">消息</a></li>
-                </ul>
-            </div>
-        </div>
-
         <div class="wall">
-            <div id="index_main" class="main_b">
-                <div id="inform" class="inform_div">
-                    <div id="inform_window" class="inform_w">
-                       <div class="inform_tag">
-                           <div class="inform_title" style="display: block">
-                               <span class="letter"><img src="./img/letter.png" width="30px"></span>
-                               <h3>新消息</h3>
-                           </div>
-                           <div class="inform_body" style="display:block;">
-                               <ul class="i_ul">
-                                   <li>
-                                       <a href="">1条通知</a>
-                                       <a href="">1条询问</a>
-                                       <a href="">5条问候</a>
-                                   </li>
-                               </ul>
-                           </div>
-                       </div>
-                    </div>
-                </div>
+            <div id="index_main" class="main_b" style="margin-left: -30px;">
                 <div class="list">
                     <div class="portrait">
                         <a href="" target="_blank">
@@ -339,103 +306,141 @@
                     </div>
                 </div>
             </div>
-            <div id="side" class="side_bar">
-                <div class="g_box">
-                    <div class="menum">
-                        <ul style="list-style: none">
-                            <li style="border-color: #b2b2b2;">
-                                <a href="mine.jsp" class="mi">
-                                    <span class="txt">
-                                        <img src="./img/ask_s.png">
-                                    </span>
-                                    <span class="txt">询问</span>
-                                    <span class="new_inf">
-                                        <img src="./img/new.png">
-                                    </span>
+            <div id="side" class="side_bar" style="margin-left: -100px;margin-top: 42px;">
+                <div class="a_card">
+                    <div style="height: 20px;"></div>
+                    <div class="p_head">
+                            <span class="opti" style="margin-left: 2px;">
+                                <a>
+                                    <img src="./img/IMG_7965.JPG" width="65px" style="border-radius:50%;">
                                 </a>
-                            </li>
-                            <li style="border-color: #b2b2b2;">
-                                <a href="mine.jsp" class="mi">
-                                    <span class="txt">
-                                        <img src="./img/inform.png">
-                                    </span>
-                                    <span class="txt">通知</span>
-                                    <span class="new_inf">
-                                        <img src="./img/new.png">
-                                    </span>
+                            </span>
+                        <span class="opti">
+                                <a class="a_tag">
+                                    <span style="margin-left: 0px;margin-right: 0px;">·找我拍</span>
                                 </a>
-                            </li>
-                            <li style="border-color: #b2b2b2;">
-                                <a href="mine.jsp" class="mi">
-                                    <span class="txt">
-                                        <img src="./img/chat.png">
-                                    </span>
-                                    <span class="txt">问候</span>
-                                    <span class="new_inf">
-                                        <img src="./img/new.png">
-                                    </span>
+                            </span>
+                    </div>
+
+                    <div>
+                            <span class="opti">
+                                <a class="a_tag" style="width: 80px;margin-left: 10px;font-size: 15px;color: #222222;">
+                                    <span style="margin-left: 0px;margin-right: 0px;"><img src="./img/location.png"></span>
+                                    <span style="margin-left: 0px;margin-right: 20px;">南京</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">拍一次</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">50/次</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">评分：4.9</span>
                                 </a>
-                            </li>
-                            <li style="border-color: #b2b2b2;">
-                                <a href="user_info_mod.jsp" class="mi">
-                                    <span class="txt">
-                                        <img src="./img/person.png">
-                                    </span>
-                                    <span class="txt">个人信息修改</span>
-                                </a>
-                            </li>
-                        </ul>
+                            </span>
+                    </div>
+
+                    <div class="announce_des">
+                        <p style="text-align: left;margin-left: 25px">专长：人像/静物</p>
+                    </div>
+                    <div class="announce_des">
+                        <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                     </div>
                 </div>
-                <div class="guess_like">
-                    <div class="txt1"><span>猜你喜欢</span></div>
+                <div class="a_card">
+                    <div style="height: 20px;"></div>
+                    <div class="p_head">
+                            <span class="opti" style="margin-left: 2px;">
+                                <a>
+                                    <img src="./img/IMG_7965.JPG" width="65px" style="border-radius:50%;">
+                                </a>
+                            </span>
+                        <span class="opti">
+                                <a class="a_tag">
+                                    <span style="margin-left: 0px;margin-right: 0px;">·找我拍</span>
+                                </a>
+                            </span>
+                    </div>
+
                     <div>
-                        <div class="like_head">
-                            <a href="" target="_blank" class="por">
-                                <img src="./img/IMG_7965.JPG" width="100px">
-                            </a>
-                            <div style="height: 35px"></div>
-                            <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
-                        </div>
-                        <a class="follow_button">
-                            <span class="fol1"><img src="./img/add.png"></span>
-                            <span class="fol1">关</span>
-                            <span class="fol1">注</span>
-                        </a>
+                            <span class="opti">
+                                <a class="a_tag" style="width: 80px;margin-left: 10px;font-size: 15px;color: #222222;">
+                                    <span style="margin-left: 0px;margin-right: 0px;"><img src="./img/location.png"></span>
+                                    <span style="margin-left: 0px;margin-right: 20px;">南京</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">拍一次</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">50/次</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">评分：4.9</span>
+                                </a>
+                            </span>
+                    </div>
+
+                    <div class="announce_des">
+                        <p style="text-align: left;margin-left: 25px">专长：人像/静物</p>
+                    </div>
+                    <div class="announce_des">
+                        <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                     </div>
                 </div>
-                <div class="guess_like">
-                    <div class="txt1"><span>猜你喜欢</span></div>
+                <div class="a_card">
+                    <div style="height: 20px;"></div>
+                    <div class="p_head">
+                            <span class="opti" style="margin-left: 2px;">
+                                <a>
+                                    <img src="./img/IMG_7965.JPG" width="65px" style="border-radius:50%;">
+                                </a>
+                            </span>
+                        <span class="opti">
+                                <a class="a_tag">
+                                    <span style="margin-left: 0px;margin-right: 0px;">·找我拍</span>
+                                </a>
+                            </span>
+                    </div>
+
                     <div>
-                        <div class="like_head">
-                            <a href="" target="_blank" class="por">
-                                <img src="./img/IMG_0178.JPG" width="100px">
-                            </a>
-                            <div style="height: 35px"></div>
-                            <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">橙子</a>
-                        </div>
-                        <a class="follow_button">
-                            <span class="fol1"><img src="./img/add.png"></span>
-                            <span class="fol1">关</span>
-                            <span class="fol1">注</span>
-                        </a>
+                            <span class="opti">
+                                <a class="a_tag" style="width: 80px;margin-left: 10px;font-size: 15px;color: #222222;">
+                                    <span style="margin-left: 0px;margin-right: 0px;"><img src="./img/location.png"></span>
+                                    <span style="margin-left: 0px;margin-right: 20px;">南京</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">拍一次</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">50/次</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">评分：4.9</span>
+                                </a>
+                            </span>
+                    </div>
+
+                    <div class="announce_des">
+                        <p style="text-align: left;margin-left: 25px">专长：人像/静物</p>
+                    </div>
+                    <div class="announce_des">
+                        <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                     </div>
                 </div>
-                <div class="guess_like">
-                    <div class="txt1"><span>猜你喜欢</span></div>
+                <div class="a_card">
+                    <div style="height: 20px;"></div>
+                    <div class="p_head">
+                            <span class="opti" style="margin-left: 2px;">
+                                <a>
+                                    <img src="./img/IMG_7965.JPG" width="65px" style="border-radius:50%;">
+                                </a>
+                            </span>
+                        <span class="opti">
+                                <a class="a_tag">
+                                    <span style="margin-left: 0px;margin-right: 0px;">·找我拍</span>
+                                </a>
+                            </span>
+                    </div>
+
                     <div>
-                        <div class="like_head">
-                            <a href="" target="_blank" class="por">
-                                <img src="./img/IMG_0024.JPG" width="100px">
-                            </a>
-                            <div style="height: 35px"></div>
-                            <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">双黄蛋</a>
-                        </div>
-                        <a class="follow_button">
-                            <span class="fol1"><img src="./img/add.png"></span>
-                            <span class="fol1">关</span>
-                            <span class="fol1">注</span>
-                        </a>
+                            <span class="opti">
+                                <a class="a_tag" style="width: 80px;margin-left: 10px;font-size: 15px;color: #222222;">
+                                    <span style="margin-left: 0px;margin-right: 0px;"><img src="./img/location.png"></span>
+                                    <span style="margin-left: 0px;margin-right: 20px;">南京</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">拍一次</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">50/次</span>
+                                    <span style="margin-left: 10px;margin-right: 20px;">评分：4.9</span>
+                                </a>
+                            </span>
+                    </div>
+
+                    <div class="announce_des">
+                        <p style="text-align: left;margin-left: 25px">专长：人像/静物</p>
+                    </div>
+                    <div class="announce_des">
+                        <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                     </div>
                 </div>
             </div>

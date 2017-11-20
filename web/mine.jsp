@@ -46,7 +46,7 @@
                         <div class="inner_list">
                             <div class="m_tag">
                                 <div class="m_pic">
-                                    <a>
+                                    <a href="other_index.jsp" target="_blank">
                                         <img src="./img/IMG_0004.JPG" width="64" height="64">
                                     </a>
                                     <span class="m_new"><img src="./img/new.png"></span>
@@ -62,6 +62,21 @@
                                 <span class="m_btn">
                                     <a>拒绝</a>
                                 </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner_list">
+                            <div class="m_tag">
+                                <div class="m_pic">
+                                    <a>
+                                        <img src="./img/IMG_0022.JPG" width="64" height="64">
+                                    </a>
+                                    <span class="m_new"><img src="./img/new.png"></span>
+                                </div>
+                            </div>
+                            <div class="m_txt">
+                                <div class="m_content">李四同意您的揭榜<br>联系方式：12345678987</div>
                             </div>
                         </div>
                     </li>

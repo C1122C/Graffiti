@@ -23,7 +23,7 @@
                 <div style="height: 20px"></div>
                 <div class="tip_text"><span>相 册 名 称: </span></div>
                 <div class="tag_div">
-                    <div class="tag_input">
+                    <div class="tag_input" style="background: rgba(255,255,255,0.6);">
                         <input class="tag_input_inner" maxlength="20">
                     </div>
                 </div>

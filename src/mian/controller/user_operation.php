@@ -1,4 +1,5 @@
 <?php
+define('ROOT_PATH',dirname(__FILE__));
 class user_info_operation{
 
 	function basic_info_inq($userid){}

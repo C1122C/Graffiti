@@ -27,6 +27,16 @@ class user
     var $announce;
     var $tag;
 
+    function __construct($username,$special,$interest,$location,$contact,$description)
+    {
+        $this->name=$username;
+        $this->special=$special;
+        $this->interest=$interest;
+        $this->location=$location;
+        $this->contact=$contact;
+        $this->description=$description;
+    }
+
     function get_id(){
         return $this->id;
     }

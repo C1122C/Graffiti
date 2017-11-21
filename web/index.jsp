@@ -13,6 +13,25 @@
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/Index.css" rel="stylesheet">
+        <script src="./js/user.js"></script>
+        <script type="text/javascript">
+            function check(){
+                var username = document.getElementById("account").value;
+                var password = document.getElementById("password").value;
+                var goon=1;
+                if (username==null || username=="") {
+                    alert("请输入用户名");
+                    goon=0;
+                }
+                else if (password==null || password=="") {
+                    alert("请输入密码");
+                    goon=0;
+                }
+                if(goon==1){
+                    logcheck(username,password);
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -32,7 +51,7 @@
             <div class="log-button">
                 <span><a href="register.jsp"><input id="reg-button" class="fon" value="注册" type="button"/></a></span>
                 <span><a href="visit_scan.jsp"><input id="visit-button" class="fon" value="游览" type="button"/></a></span>
-                <span><a href="user_index.jsp"><input id="login-button" class="fon" value="登录" type="button"/></a></span>
+                <span><a href="user_index.jsp"><input id="login-button" class="fon" value="登录" type="button" onclick="logcheck()"/></a></span>
             </div>
         </div>
     </body>

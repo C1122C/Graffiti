@@ -25,7 +25,43 @@ class user
     var $upload;
     var $album;
     var $announce;
-    var $tag;
+    var $publishTag;
+    var $searchTag;
+    var $mark;
+    var $head;
+
+    /**
+     * @return mixed
+     */
+    public function getPublishTag()
+    {
+        return $this->publishTag;
+    }
+
+    /**
+     * @param mixed $publishTag
+     */
+    public function setPublishTag($publishTag)
+    {
+        $this->publishTag = $publishTag;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSearchTag()
+    {
+        return $this->searchTag;
+    }
+
+    /**
+     * @param mixed $searchTag
+     */
+    public function setSearchTag($searchTag)
+    {
+        $this->searchTag = $searchTag;
+    }
+
 
     function __construct($username,$special,$interest,$location,$contact,$description)
     {
@@ -149,13 +185,20 @@ class user
         $this->announce=$announce;
     }
 
-    function get_tag(){
-        return $this->tag;
+
+    /**
+     * @return mixed
+     */
+    public function getMark()
+    {
+        return $this->mark;
     }
 
-    function set_tag($tag){
-        $this->tag=$tag;
+    /**
+     * @param mixed $mark
+     */
+    public function setMark($mark)
+    {
+        $this->mark = $mark;
     }
-
-
 }

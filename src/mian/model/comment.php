@@ -11,4 +11,9 @@ namespace mian\model;
 
 class comment
 {
+    var $id;
+    var $picture;
+    var $des;
+    var $author;
+    var $date;
 }

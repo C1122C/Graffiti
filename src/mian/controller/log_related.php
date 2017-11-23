@@ -10,6 +10,14 @@ namespace mian\controller;
 
 
 use mian\dao\log_related_dao;
+use mian\dao\announce_info_dao;
+use mian\model\announce;
+use mian\model\announce_select;
+use mian\model\comment;
+use mian\model\message;
+use mian\model\picture;
+use mian\model\tag;
+use mian\model\user;
 
 class log_related
 {

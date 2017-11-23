@@ -27,11 +27,35 @@ class user_info_dao
 
     function collect_del($userid,$picid){}
 
-    function comment_inq($userid){}
+    function own_announce_inq($userid){}
 
-    function mission_inq($userid){}
+    function part_announce_inq($userid){}
 
-    function user_search($uservo){}
+    function announce_add($userid,$announceid){}
 
-    function user_del($userid_s,$userid_d){}
+    function announce_del($userid,$announceid){}
+
+    function upload_inq($userid,$book){}
+
+    function upload_add($userid,$picid,$book){}
+
+    function upload_del($userid,$picid){}
+
+    function album_inq($userid){}
+
+    function album_add($userid,$albumid){}
+
+    function album_del($userid,$albumid){}
+
+    function adm_account(){}
+
+    function user_del($userid_d){}
+
+    function transmit_inq($userid){
+    }
+
+    function add_transmit($userid,$picid){
+    }
+
+    function del_transmit($userid,$picid){}
 }

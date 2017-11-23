@@ -13,6 +13,23 @@
     <meta charset="utf-8">
     <meta name="description" content="晒出你的图片来">
     <link href="./CSS/visit.css" rel="stylesheet">
+    <script src="./js/picture.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            hot_pic();
+        }
+        function check(){
+            var input = document.getElementById("v_s_input").value;
+            var goon=1;
+            if (input==null || input=="") {
+                alert("请输入搜索条件");
+                goon=0;
+            }
+            if(goon==1){
+                pic_search_keyword(input);
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="v_headbar">
@@ -28,13 +45,13 @@
     <div style="height: 30px;"></div>
     <div class="search_bar">
         <form id="search">
-            <input type="text" class="input_text" value="  输入分类、作者或描述查找图片"/>
-            <input type="submit" class="input_button" value=""/>
+            <input type="text" class="input_text" id="v_s_input" placeholder="  输入分类、作者或描述查找图片"/>
+            <input type="submit" class="input_button" onclick="check()"/>
         </form>
     </div>
 
     <div id="wall_body" class="wall">
-        <div class="col0">
+        <div class="col0" id="v_s_col0">
             <div class="card">
                 <div style="height: 30px;"></div>
                 <div class="img" onclick="">
@@ -68,7 +85,7 @@
                 <div style="height: 60px;"></div>
             </div>
         </div>
-        <div class="col1">
+        <div class="col1" id="v_s_col1">
             <div class="card">
                 <div style="height: 30px;"></div>
                 <div class="img" onclick="">
@@ -102,7 +119,7 @@
                 <div style="height: 60px;"></div>
             </div>
         </div>
-        <div class="col2">
+        <div class="col2" id="v_s_col2">
             <div class="card">
                 <div style="height: 30px;"></div>
                 <div class="img" onclick="">

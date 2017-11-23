@@ -1226,3 +1226,14 @@ a{
     margin-left: 20px;
 }
 
+.comment_bar{
+    font-family:"Hiragino Sans GB","Microsoft YaHei";
+    position:relative;
+    z-index:3;
+    height:19px;
+    line-height:19px;
+    color:#aaa;
+    margin-left: 0px;
+    width: 100%;
+    margin-top: 15px;
+}

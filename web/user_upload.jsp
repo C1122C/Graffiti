@@ -13,36 +13,54 @@
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/user.css" rel="stylesheet">
+        <script src="./js/user.js"></script>
+        <script type="text/javascript">
+            function begin_upload(){
+                //...
+                open_upload_window();
+            }
+            function open_upload_window(){
+
+            }
+            function cancal_pic(){
+
+            }
+            function check(){
+                var tag=document.getElementById("pic_upload_tag").value;
+                var album=document.getElementById("pic_upload_album").value;
+                var description=document.getElementById("pic_upload_des").value;
+            }
+        </script>
     </head>
     <body style="background-image: url(./img/upload_back.jpg);background-size:100% 100%;">
         <div style="height: 50px;width: 100%"></div>
         <div class="upload_pan">
             <div style="height: 40px;"></div>
             <div class="up_col">
-                <a><div class="photo_click" onclick="" style="display: none"></div></a>
-                <div class="photo_list">
+                <a><div class="photo_click" onclick="begin_upload()" style="display: none"></div></a>
+                <div class="photo_list" id="pic_upload_list">
                     <div class="photo_queue">
                         <div class="photo_small">
-                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="">
+                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="cancal_pic()">
                         </div>
                         <div class="photo_small">
-                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="">
+                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="cancal_pic()">
                         </div>
                         <div class="photo_small">
-                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="">
+                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="cancal_pic()">
                         </div>
                         <div class="photo_small">
-                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="">
+                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="cancal_pic()">
                         </div>
                         <div class="photo_small">
-                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="">
+                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="cancal_pic()">
                         </div>
                         <div class="photo_small">
-                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="">
+                            <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="cancal_pic()">
                         </div>
                     </div>
                 </div>
-                <div class="add_bar" onclick="">
+                <div class="add_bar" onclick="open_upload_window()">
                     <div class="add_button">
                         <div class="add_icon">
                             <img src="./img/add.png" width="38px" height="40px">
@@ -55,13 +73,13 @@
                 <div class="tip_text"><span>标 签: </span></div>
                 <div class="tag_div">
                     <div class="tag_input">
-                        <input class="tag_input_inner" maxlength="20" placeholder="添加标签，以逗号分隔">
+                        <input class="tag_input_inner" id="pic_upload_tag" maxlength="20" placeholder="添加标签，以逗号分隔">
                     </div>
                 </div>
                 <div style="height: 20px;"></div>
                 <div style="opacity: 2;margin-bottom: 10px;">
                     <div class="tip_text" style="float: left"><span>相 册: </span></div>
-                    <select class="select_bar">
+                    <select class="select_bar" id="pic_upload_album">
                         <option>album1</option>
                         <option>album2</option>
                         <option>album3</option>
@@ -71,14 +89,14 @@
                 <div class="tip_text" style="margin-bottom: 5px"><span>描 述: </span></div>
                 <div class="des_editor">
                     <div class="publish_editor">
-                        <div class="write_board" contenteditable="true"></div>
+                        <div class="write_board" contenteditable="true" id="pic_upload_des"></div>
                     </div>
                 </div>
                 <div class="up_button_div">
                     <a href="i_pie.jsp"><button class="cancle_button" hidefocus="true">
                         <span>取 消</span>
                     </button></a>
-                    <a href="i_pie.jsp"><button class="pub_button">
+                    <a href="i_pie.jsp"><button class="pub_button" onclick="check()">
                         <span>发 布</span>
                     </button></a>
                 </div>

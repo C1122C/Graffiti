@@ -13,6 +13,13 @@
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/user.css" rel="stylesheet">
+        <script src="./js/picture.js"></script>
+        <script src="./js/user.js"></script>
+        <script type="text/javascript">
+            window.onload=function(){
+                my_work();
+            }
+        </script>
     </head>
     <body>
         <div class="v_headbar">
@@ -36,29 +43,29 @@
         <div class="wall">
             <div class="paper">
                 <div class="inner_paper">
-                    <div class="album">
+                    <div class="album" onclick="album_pic()">
                         <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
-                        <span class="operator"><img src="./img/delete.png"></span>
+                        <span class="operator"><img src="./img/delete.png" onclick="album_delete()"></span>
                         <span>album1</span>
                     </div>
-                    <div class="album">
+                    <div class="album" onclick="album_pic()">
                         <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
-                        <span class="operator"><img src="./img/delete.png"></span>
+                        <span class="operator"><img src="./img/delete.png" onclick="album_delete()"></span>
                         <span>album1</span>
                     </div>
-                    <div class="album">
+                    <div class="album" onclick="album_pic()">
                         <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
-                        <span class="operator"><img src="./img/delete.png"></span>
+                        <span class="operator"><img src="./img/delete.png" onclick="album_delete()"></span>
                         <span>album1</span>
                     </div>
-                    <div class="album">
+                    <div class="album" onclick="album_pic()">
                         <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
-                        <span class="operator"><img src="./img/delete.png"></span>
+                        <span class="operator"><img src="./img/delete.png" onclick="album_delete()"></span>
                         <span>album1</span>
                     </div>
-                    <div class="album">
+                    <div class="album" onclick="album_pic()">
                         <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
-                        <span class="operator"><img src="./img/delete.png"></span>
+                        <span class="operator"><img src="./img/delete.png" onclick="album_delete()"></span>
                         <span>album1</span>
                     </div>
                 </div>
@@ -127,15 +134,10 @@
                                     <span class="opti">热度（46）</span>
                                     <span class="opti" style="margin-left: -5px;margin-top: -18px">
                                         <a>
-                                            <img src="./img/like_unclicked.png">
+                                            <img src="./img/delete.png" onclick="picture_delete()">
                                         </a>
                                     </span>
                                 </div>
-                            </div>
-                            <div class="fed_back">
-                                <div class="c_input" contenteditable="true">
-                                </div>
-                                <input type="submit" value="发布" class="c_button">
                             </div>
                         </div>
                     </div>

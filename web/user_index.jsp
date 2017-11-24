@@ -241,6 +241,16 @@
                                     </span>
                                 </div>
                             </div>
+                            <div class="comment_bar1" style="display:none;">
+                                <span class="opti" style="margin-left: 20px;">
+                                    <a>
+                                        <img src="./img/IMG_7965.JPG" width="65px" style="border-radius:50%;" onclick="other_user_info()">
+                                    </a>
+                                </span>
+                                <div class="m_txt1">
+                                    <div class="m_content">色彩把握的不错。</div>
+                                </div>
+                            </div>
                             <div class="comment_bar" style="display: none;">
                                 <div class="c_input" contenteditable="true">
                                 </div>

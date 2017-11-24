@@ -404,7 +404,7 @@ a{
     text-align:center;
 }
 
-.opti_c,.opti{
+.opti_can,.opti_c,.opti{
     position:relative;
     z-index:3;
     zoom:1;
@@ -851,10 +851,10 @@ a{
 }
 
 .album{
-    max-width: 200px;
-    max-height: 250px;
+    max-width: 190px;
+    max-height: 240px;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 18px;
     opacity: 1;
     cursor: pointer;
     padding: 5px;
@@ -866,7 +866,7 @@ a{
 }
 
 .album img{
-    margin: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
     z-index: 5;
     border-radius: 10px;
 }

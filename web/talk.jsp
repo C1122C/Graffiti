@@ -13,6 +13,30 @@
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/user.css" rel="stylesheet">
+        <script src="./js/user.js"></script>
+        <script src="./js/jquery-3.2.1.js"></script>
+        <script type="text/javascript">
+            window.onload=function(){
+                my_follow();
+            };
+
+            $(document).ready(function(){
+
+                $(".follow_button").click(function(){
+                    var res=confirm("确定取消关注？")
+                    if(res==true){
+                        $(this).hide();
+                        $(this).siblings().show();
+                        unfollow();
+                    }
+                });
+
+                $("li").click(function(){
+                    group_change();
+                })
+
+            });
+        </script>
     </head>
     <body>
         <div class="v_headbar">
@@ -35,13 +59,18 @@
                         <div class="t_follow">
                             <div class="txt1"><span></span></div>
                             <div>
-                                <div class="like_head">
+                                <div class="like_head" onclick="other_user_info()">
                                     <a href="" target="_blank" class="por">
                                         <img src="./img/IMG_7965.JPG" width="100px">
                                     </a>
                                     <div style="height: 35px"></div>
                                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
                                 </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
                                 <a class="follow_button">
                                     <span class="unfollow_txt">取</span>
                                     <span class="unfollow_txt">消</span>
@@ -53,13 +82,18 @@
                         <div class="t_follow">
                             <div class="txt1"><span></span></div>
                             <div>
-                                <div class="like_head">
+                                <div class="like_head" onclick="other_user_info()">
                                     <a href="" target="_blank" class="por">
                                         <img src="./img/IMG_7965.JPG" width="100px">
                                     </a>
                                     <div style="height: 35px"></div>
                                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
                                 </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
                                 <a class="follow_button">
                                     <span class="unfollow_txt">取</span>
                                     <span class="unfollow_txt">消</span>
@@ -71,13 +105,18 @@
                         <div class="t_follow">
                             <div class="txt1"><span></span></div>
                             <div>
-                                <div class="like_head">
+                                <div class="like_head" onclick="other_user_info()">
                                     <a href="" target="_blank" class="por">
                                         <img src="./img/IMG_7965.JPG" width="100px">
                                     </a>
                                     <div style="height: 35px"></div>
                                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
                                 </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
                                 <a class="follow_button">
                                     <span class="unfollow_txt">取</span>
                                     <span class="unfollow_txt">消</span>
@@ -89,87 +128,18 @@
                         <div class="t_follow">
                             <div class="txt1"><span></span></div>
                             <div>
-                                <div class="like_head">
+                                <div class="like_head" onclick="other_user_info()">
                                     <a href="" target="_blank" class="por">
                                         <img src="./img/IMG_7965.JPG" width="100px">
                                     </a>
                                     <div style="height: 35px"></div>
                                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
                                 </div>
-                                <a class="follow_button">
-                                    <span class="unfollow_txt">取</span>
-                                    <span class="unfollow_txt">消</span>
-                                    <span class="unfollow_txt">关</span>
-                                    <span class="unfollow_txt">注</span>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="t_col">
-                        <div class="t_follow">
-                            <div class="txt1"><span></span></div>
-                            <div>
-                                <div class="like_head">
-                                    <a href="" target="_blank" class="por">
-                                        <img src="./img/IMG_7965.JPG" width="100px">
-                                    </a>
-                                    <div style="height: 35px"></div>
-                                    <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
-                                </div>
-                                <a class="follow_button">
-                                    <span class="unfollow_txt">取</span>
-                                    <span class="unfollow_txt">消</span>
-                                    <span class="unfollow_txt">关</span>
-                                    <span class="unfollow_txt">注</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="t_follow">
-                            <div class="txt1"><span></span></div>
-                            <div>
-                                <div class="like_head">
-                                    <a href="" target="_blank" class="por">
-                                        <img src="./img/IMG_7965.JPG" width="100px">
-                                    </a>
-                                    <div style="height: 35px"></div>
-                                    <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
-                                </div>
-                                <a class="follow_button">
-                                    <span class="unfollow_txt">取</span>
-                                    <span class="unfollow_txt">消</span>
-                                    <span class="unfollow_txt">关</span>
-                                    <span class="unfollow_txt">注</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="t_follow">
-                            <div class="txt1"><span></span></div>
-                            <div>
-                                <div class="like_head">
-                                    <a href="" target="_blank" class="por">
-                                        <img src="./img/IMG_7965.JPG" width="100px">
-                                    </a>
-                                    <div style="height: 35px"></div>
-                                    <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
-                                </div>
-                                <a class="follow_button">
-                                    <span class="unfollow_txt">取</span>
-                                    <span class="unfollow_txt">消</span>
-                                    <span class="unfollow_txt">关</span>
-                                    <span class="unfollow_txt">注</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="t_follow">
-                            <div class="txt1"><span></span></div>
-                            <div>
-                                <div class="like_head">
-                                    <a href="" target="_blank" class="por">
-                                        <img src="./img/IMG_7965.JPG" width="100px">
-                                    </a>
-                                    <div style="height: 35px"></div>
-                                    <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
-                                </div>
                                 <a class="follow_button">
                                     <span class="unfollow_txt">取</span>
                                     <span class="unfollow_txt">消</span>
@@ -183,13 +153,18 @@
                         <div class="t_follow">
                             <div class="txt1"><span></span></div>
                             <div>
-                                <div class="like_head">
+                                <div class="like_head" onclick="other_user_info()">
                                     <a href="" target="_blank" class="por">
                                         <img src="./img/IMG_7965.JPG" width="100px">
                                     </a>
                                     <div style="height: 35px"></div>
                                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
                                 </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
                                 <a class="follow_button">
                                     <span class="unfollow_txt">取</span>
                                     <span class="unfollow_txt">消</span>
@@ -201,13 +176,18 @@
                         <div class="t_follow">
                             <div class="txt1"><span></span></div>
                             <div>
-                                <div class="like_head">
+                                <div class="like_head" onclick="other_user_info()">
                                     <a href="" target="_blank" class="por">
                                         <img src="./img/IMG_7965.JPG" width="100px">
                                     </a>
                                     <div style="height: 35px"></div>
                                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
                                 </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
                                 <a class="follow_button">
                                     <span class="unfollow_txt">取</span>
                                     <span class="unfollow_txt">消</span>
@@ -219,13 +199,18 @@
                         <div class="t_follow">
                             <div class="txt1"><span></span></div>
                             <div>
-                                <div class="like_head">
+                                <div class="like_head" onclick="other_user_info()">
                                     <a href="" target="_blank" class="por">
                                         <img src="./img/IMG_7965.JPG" width="100px">
                                     </a>
                                     <div style="height: 35px"></div>
                                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
                                 </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
                                 <a class="follow_button">
                                     <span class="unfollow_txt">取</span>
                                     <span class="unfollow_txt">消</span>
@@ -237,13 +222,112 @@
                         <div class="t_follow">
                             <div class="txt1"><span></span></div>
                             <div>
-                                <div class="like_head">
+                                <div class="like_head" onclick="other_user_info()">
                                     <a href="" target="_blank" class="por">
                                         <img src="./img/IMG_7965.JPG" width="100px">
                                     </a>
                                     <div style="height: 35px"></div>
                                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
                                 </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
+                                <a class="follow_button">
+                                    <span class="unfollow_txt">取</span>
+                                    <span class="unfollow_txt">消</span>
+                                    <span class="unfollow_txt">关</span>
+                                    <span class="unfollow_txt">注</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_col">
+                        <div class="t_follow">
+                            <div class="txt1"><span></span></div>
+                            <div>
+                                <div class="like_head" onclick="other_user_info()">
+                                    <a href="" target="_blank" class="por">
+                                        <img src="./img/IMG_7965.JPG" width="100px">
+                                    </a>
+                                    <div style="height: 35px"></div>
+                                    <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
+                                </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
+                                <a class="follow_button">
+                                    <span class="unfollow_txt">取</span>
+                                    <span class="unfollow_txt">消</span>
+                                    <span class="unfollow_txt">关</span>
+                                    <span class="unfollow_txt">注</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="t_follow">
+                            <div class="txt1"><span></span></div>
+                            <div>
+                                <div class="like_head" onclick="other_user_info()">
+                                    <a href="" target="_blank" class="por">
+                                        <img src="./img/IMG_7965.JPG" width="100px">
+                                    </a>
+                                    <div style="height: 35px"></div>
+                                    <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
+                                </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
+                                <a class="follow_button">
+                                    <span class="unfollow_txt">取</span>
+                                    <span class="unfollow_txt">消</span>
+                                    <span class="unfollow_txt">关</span>
+                                    <span class="unfollow_txt">注</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="t_follow">
+                            <div class="txt1"><span></span></div>
+                            <div>
+                                <div class="like_head" onclick="other_user_info()">
+                                    <a href="" target="_blank" class="por">
+                                        <img src="./img/IMG_7965.JPG" width="100px">
+                                    </a>
+                                    <div style="height: 35px"></div>
+                                    <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
+                                </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
+                                <a class="follow_button">
+                                    <span class="unfollow_txt">取</span>
+                                    <span class="unfollow_txt">消</span>
+                                    <span class="unfollow_txt">关</span>
+                                    <span class="unfollow_txt">注</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="t_follow">
+                            <div class="txt1"><span></span></div>
+                            <div>
+                                <div class="like_head" onclick="other_user_info()">
+                                    <a href="" target="_blank" class="por">
+                                        <img src="./img/IMG_7965.JPG" width="100px">
+                                    </a>
+                                    <div style="height: 35px"></div>
+                                    <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;">琪琪</a>
+                                </div>
+                                <a class="follow_button" style="display: none;">
+                                    <span class="fol1"><img src="./img/add.png"></span>
+                                    <span class="fol1">关</span>
+                                    <span class="fol1">注</span>
+                                </a>
                                 <a class="follow_button">
                                     <span class="unfollow_txt">取</span>
                                     <span class="unfollow_txt">消</span>
@@ -255,7 +339,7 @@
                     </div>
                 </div>
                 <div class="t_group">
-                    <ul style="padding: 0;margin: 0;width: 100%;">
+                    <ul style="padding: 0;margin: 0;width: 100%;cursor: hand;">
                         <li><a>group1</a></li>
                         <li><a>group1</a></li>
                         <li><a>group1</a></li>

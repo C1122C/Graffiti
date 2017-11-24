@@ -135,16 +135,6 @@
                                                 <img src="./img/IMG_0006.JPG" width="250px">
                                             </a>
                                         </div>
-                                        <ol style="display: none;cursor: hand;z-index: 20;min-width: 500px;min-height: 500px;">
-                                            <li>
-                                                <div class="picbig" style="cursor: hand;">
-                                                    <a href="#" hidefocus="true">
-                                                        <img src="./img/IMG_0006.JPG" width="500px" style="overflow: visible;">
-                                                    </a>
-                                                </div>
-                                                <p></p>
-                                            </li>
-                                        </ol >
                                     </div>
                                     <div class="text">
                                         <blockquote>

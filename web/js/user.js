@@ -46,3 +46,9 @@ function album_create(name,tag,des){
 function picture_upload(){
 
 }
+
+function my_follow(){
+
+}
+
+function group_change(){}

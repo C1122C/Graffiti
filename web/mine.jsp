@@ -13,6 +13,41 @@
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/user.css" rel="stylesheet">
+        <script src="./js/user.js"></script>
+        <script src="./js/message.js"></script>
+        <script src="./js/jquery-3.2.1.js"></script>
+        <script type="text/javascript">
+            window.onload=function(){
+                my_follow();
+            };
+
+            $(document).ready(function(){
+
+                $("li").click(function(){
+                    $(this).children().children().children().find("span").hide();
+                    not_new();
+                });
+
+                $(".ok").click(function(){
+                    var res=confirm("确认同意？");
+                    if(res==true){
+                        $(this).parent().parent().hide();
+                        $(this).parent().parent().next().show();
+                        send_agree_inform();
+                    }
+                });
+
+                $(".no").click(function(){
+                    var res=confirm("确认拒绝？");
+                    if(res==true){
+                        $(this).parent().parent().hide();
+                        $(this).parent().parent().next().next().show();
+                        send_refuse_inform();
+                    }
+                });
+
+            });
+        </script>
     </head>
     <body>
         <div class="v_headbar">
@@ -34,9 +69,8 @@
                 <div class="m_header">
                     <h2>
                         <span>
-                            <a class="m_a1" style="font-weight: bolder">询问</a>
-                            <a class="m_a1">通知</a>
-                            <a class="m_a1">问候</a>
+                            <a class="m_a1" style="font-weight: bolder" onclick="show_inq()">询问</a>
+                            <a class="m_a1" onclick="show_inform()">通知</a>
                         </span>
                         <span>CC</span>
                     </h2>
@@ -57,11 +91,17 @@
                             </div>
                             <div class="m_action">
                                 <span class="m_btn">
-                                    <a>同意</a>
+                                    <a class="ok">同意</a>
                                 </span>
                                 <span class="m_btn">
-                                    <a>拒绝</a>
+                                    <a class="no">拒绝</a>
                                 </span>
+                            </div>
+                            <div class="m_action" style="display: none;">
+                                已同意
+                            </div>
+                            <div class="m_action" style="display: none;">
+                                已拒绝
                             </div>
                         </div>
                     </li>

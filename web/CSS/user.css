@@ -283,6 +283,7 @@ a{
 .inform_body li{
     float:left;
     width:100%;
+    cursor: hand;
 }
 
 .inform_body a{
@@ -1302,4 +1303,8 @@ a{
     margin-left:5px;
     margin-right:0px;
     color: #888;
+}
+
+.t_group li:checked{
+    background-color: white;
 }

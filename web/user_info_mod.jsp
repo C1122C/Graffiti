@@ -13,6 +13,43 @@
     <meta charset="utf-8">
     <meta name="description" content="晒出你的图片来">
     <link href="./CSS/Index.css" rel="stylesheet">
+    <script src="./js/user.js"></script>
+    <script type="text/javascript">
+        function check(){
+            var username = document.getElementById("uname").value;
+            var password = document.getElementById("upassword").value;
+            var special=document.getElementById("uspecial").value;
+            var interest=document.getElementById("uinterest").value;
+            var location=document.getElementById("ulocation").value;
+            var contact=document.getElementById("ucontact").value;
+            var description=document.getElementById("des").value;
+            var goon=0;
+            if (username==null || username=="") {
+                alert("请输入用户名");
+            }
+            else if (password==null || password=="") {
+                alert("请输入密码");
+            }
+            else if(special==null || special==""){
+                alert("请输入专长");
+            }
+            else if(interest==null || interest==""){
+                alert("请输入兴趣");
+            }
+            else if(location==null || location==""){
+                alert("请输入位置");
+            }
+            else if(contact==null || contact==""){
+                alert("请输入联系方式");
+            }
+            else{
+                goon=1;
+            }
+            if(goon==1){
+                register(username,password,special,interest,location,contact,description);
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="reg-pan">
@@ -47,7 +84,7 @@
         </div>
         <div style="text-align: right; margin-right: 60px">
             <span><a href="user_index.jsp"><input id="cancle"  value="取消" type="button"/></a></span>
-            <span><a href="user_index.jsp"><input id="register"  value="确定" type="button"/></a></span>
+            <span><a href="user_index.jsp"><input id="register"  value="确定" type="button" onclick="check()"/></a></span>
         </div>
     </div>
 </body>

@@ -13,6 +13,9 @@
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/user.css" rel="stylesheet">
+        <script src="./js/user.js"></script>
+        <script src="./js/announce.js"></script>
+        <script src="./js/jquery-3.2.1.js"></script>
     </head>
     <body style="background-image: url(./img/newAnnounce.jpg);background-size:100% 100%;">
         <div style="height: 100px;width: 100%"></div>
@@ -59,7 +62,7 @@
                     <a href="i_pie.jsp"><button class="cancle_button" hidefocus="true">
                         <span>取 消</span>
                     </button></a>
-                    <a href="i_pie.jsp"><button class="pub_button">
+                    <a href="i_pie.jsp"><button class="pub_button" onclick="new_announce()">
                         <span>发 布</span>
                     </button></a>
                 </div>

@@ -443,7 +443,7 @@ a{
     margin-left: 20px;
 }
 
-.c_button{
+.m_button,.g_button,.con_button,.c_button{
     font-family:"Microsoft YaHei";
     font-weight: 600;
     position:relative;
@@ -815,6 +815,7 @@ a{
     border: 0;
     text-align: center;
     margin-right: 40px;
+    cursor: hand;
 }
 
 .tip_text{

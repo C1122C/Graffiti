@@ -28,3 +28,7 @@ function pic_search_keyword_user(keyword){
 function republish(){
 
 }
+
+function cancle_upload(){
+
+}

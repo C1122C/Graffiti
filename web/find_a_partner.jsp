@@ -13,6 +13,50 @@
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/user.css" rel="stylesheet">
+        <script src="./js/user.js"></script>
+        <script src="./js/announce.js"></script>
+        <script src="./js/jquery-3.2.1.js"></script>
+        <script type="text/javascript">
+            window.onload=function(){
+                announce();
+            };
+
+            $(document).ready(function(){
+
+                $(".a_cancle_btn").click(function(){
+                    var res=confirm("确定删除这个公告吗？")
+                    if(res==true){
+                        $(this).parent().parent().hide();
+                        announce_del();
+                    }
+                });
+
+                $(".m_button").click(function(){
+                    var res=confirm("确定修改公告？")
+                    if(res==true){
+                        $(this).parent().parent().hide();
+                        announce_del();
+                        //go to new announce page
+                    }
+                });
+
+                $(".g_button").click(function(){
+                    var res=confirm("确定揭榜？")
+                    if(res==true){
+                        $(this).parent().hide();
+                        $(this).parent().next().show();
+                        announce_ans();
+                    }
+                });
+
+                $(".con_button").click(function(){
+                    $(this).parent().hide();
+                    $(this).parent().prev().show();
+                    announce_mark();
+                });
+
+            });
+        </script>
     </head>
     <body>
         <div class="v_headbar">
@@ -44,7 +88,7 @@
                     </select>
                 </div>
                 <div class="search_win"><input maxlength="20" placeholder="要求" style="width: 200px;background-color: #fff;border-width: 0px;"></div>
-                <div style="float: right;border-width: 0px;"><button class="pub_button" style="float: left;margin-left: 20px;margin-top: 10px;border-radius: 5px;border-width: 0px;"><span>搜 索</span></button></div>
+                <div style="float: right;border-width: 0px;"><button class="pub_button" style="float: left;margin-left: 20px;margin-top: 10px;border-radius: 5px;border-width: 0px;" onclick="search()"><span>搜 索</span></button></div>
             </div>
             <div style="height: 160px;width:70%;margin-left: 120px;margin-top:-15px;background-color: #fff;z-index: 6;border-top-width: 0;">
                 <div class="search_down">
@@ -66,8 +110,8 @@
             </div>
             <div style="width:70%;margin-left: 120px;margin-top:15px;">
                 <a href="announce_create.jsp"><button class="pub_button" style="float: left;border-radius: 5px;"><span>新 公 告</span></button></a>
-                <button class="pub_button" style="float: left;border-radius: 5px;"><span>我 发 布 的</span></button>
-                <button class="pub_button" style="float: left;border-radius: 5px;"><span>我 参 与 的</span></button>
+                <button class="pub_button" style="float: left;border-radius: 5px;" onclick="my_announce()"><span>我 发 布 的</span></button>
+                <button class="pub_button" style="float: left;border-radius: 5px;" onclick="my_part()"><span>我 参 与 的</span></button>
             </div>
             <div class="wall">
                 <div class="announce_col" style="margin-left: 120px;">
@@ -105,7 +149,7 @@
                             <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                         </div>
                         <div class="fed_back">
-                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;" value="修 改" class="c_button">
+                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="修 改" class="m_button">
                             <input type="submit" value="删 除" class="a_cancle_btn">
                         </div>
                     </div>
@@ -143,7 +187,17 @@
                             <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                         </div>
                         <div class="fed_back">
-                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;" value="揭 榜" class="c_button">
+                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="揭 榜" class="g_button">
+                        </div>
+                        <div class="fed_back" style="display: none;">
+                            <span class="opti" style="margin-top:-10px;">
+                                <a class="a_tag">
+                                    <span style="margin-left: -10px;margin-right: 0px;">活动评分(1~5)：</span>
+                                </a>
+                            </span>
+                            <div class="c_input"style="margin-left:35px;width:30px;min-height:15px;line-height:15px;" contenteditable="true">
+                            </div>
+                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="确 定" class="con_button">
                         </div>
                     </div>
                 </div>
@@ -182,7 +236,17 @@
                             <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                         </div>
                         <div class="fed_back">
-                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;" value="揭 榜" class="c_button">
+                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="揭 榜" class="g_button">
+                        </div>
+                        <div class="fed_back" style="display: none;">
+                            <span class="opti" style="margin-top:-10px;">
+                                <a class="a_tag">
+                                    <span style="margin-left: -10px;margin-right: 0px;">活动评分(1~5)：</span>
+                                </a>
+                            </span>
+                            <div class="c_input"style="margin-left:35px;width:30px;min-height:15px;line-height:15px;" contenteditable="true">
+                            </div>
+                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="确 定" class="con_button">
                         </div>
                     </div>
                     <div class="a_card">
@@ -216,6 +280,9 @@
                         <div class="announce_des">
                             <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                         </div>
+                        <div class="fed_back" style="display:none;">
+                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="揭 榜" class="g_button">
+                        </div>
                         <div class="fed_back">
                             <span class="opti" style="margin-top:-10px;">
                                 <a class="a_tag">
@@ -224,7 +291,7 @@
                             </span>
                             <div class="c_input"style="margin-left:35px;width:30px;min-height:15px;line-height:15px;" contenteditable="true">
                             </div>
-                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;" value="确 定" class="c_button">
+                            <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="确 定" class="con_button">
                         </div>
                     </div>
                 </div>

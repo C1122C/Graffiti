@@ -132,11 +132,7 @@
                                 </div>
                                 <div class="comment">
                                     <span class="opti">热度（46）</span>
-                                    <span class="opti" style="margin-left: -5px;margin-top: -18px">
-                                        <a>
-                                            <img src="./img/delete.png" onclick="picture_delete()">
-                                        </a>
-                                    </span>
+                                    <span class="opti">删除</span>
                                 </div>
                             </div>
                         </div>

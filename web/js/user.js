@@ -15,6 +15,10 @@ function follow(){
 
 }
 
+function unfollow(){
+
+}
+
 function user_index(){
 
 }

@@ -7,7 +7,9 @@ function thumb(){
 
 }
 
-function comment(){
+function cancle_thumb(){}
+
+function comment(c){
 
 }
 

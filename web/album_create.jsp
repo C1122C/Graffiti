@@ -14,8 +14,11 @@
             <meta charset="utf-8">
             <meta name="description" content="晒出你的图片来">
             <link href="./CSS/user.css" rel="stylesheet">
+            <script src="./js/picture.js"></script>
             <script src="./js/user.js"></script>
+            <script src="./js/jquery-3.2.1.js"></script>
             <script type="text/javascript">
+
                function check(){
                    var name=document.getElementById("album_c_name").value;
                    var tag=document.getElementById("album_c_tag").value;

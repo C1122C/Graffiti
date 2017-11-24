@@ -13,12 +13,30 @@
         <meta charset="utf-8">
         <meta name="description" content="晒出你的图片来">
         <link href="./CSS/user.css" rel="stylesheet">
+        <script src="./js/picture.js"></script>
         <script src="./js/user.js"></script>
+        <script src="./js/jquery-3.2.1.js"></script>
+
         <script type="text/javascript">
-            function begin_upload(){
-                //...
-                open_upload_window();
-            }
+
+            $(document).ready(function(){
+
+                $(".photo_small").click(function(){
+                    var res=confirm("移除这张图片？");
+                    if(res==true){
+                        $(this).hide();
+                        cancle_upload();
+                    }
+                });
+
+                $(".photo_click").click(function(){
+                    $(this).hide();
+                    $(this).siblings().show();
+                });
+
+
+            });
+
             function open_upload_window(){
 
             }
@@ -37,8 +55,8 @@
         <div class="upload_pan">
             <div style="height: 40px;"></div>
             <div class="up_col">
-                <a><div class="photo_click" onclick="begin_upload()" style="display: none"></div></a>
-                <div class="photo_list" id="pic_upload_list">
+                <div class="photo_click"></div>
+                <div class="photo_list" id="pic_upload_list"  style="display: none;">
                     <div class="photo_queue">
                         <div class="photo_small">
                             <img src="./img/IMG_0004.JPG" width="96" height="96" onclick="cancal_pic()">
@@ -60,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="add_bar" onclick="open_upload_window()">
+                <div class="add_bar" onclick="open_upload_window()" style="display: none;">
                     <div class="add_button">
                         <div class="add_icon">
                             <img src="./img/add.png" width="38px" height="40px">

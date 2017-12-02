@@ -20,7 +20,6 @@ class user
     var $description;
     var $follow;
     var $collection;
-    var $comment;
     var $mission;
     var $upload;
     var $album;
@@ -30,6 +29,9 @@ class user
     var $mark;
     var $head;
 
+    function __construct(){
+
+    }
     /**
      * @return mixed
      */
@@ -60,17 +62,6 @@ class user
     public function setSearchTag($searchTag)
     {
         $this->searchTag = $searchTag;
-    }
-
-
-    function __construct($username,$special,$interest,$location,$contact,$description)
-    {
-        $this->name=$username;
-        $this->special=$special;
-        $this->interest=$interest;
-        $this->location=$location;
-        $this->contact=$contact;
-        $this->description=$description;
     }
 
     function get_id(){
@@ -145,13 +136,6 @@ class user
         $this->collection=$collection;
     }
 
-    function get_comment(){
-        return $this->comment;
-    }
-
-    function set_comment($comment){
-        $this->comment=$comment;
-    }
 
     function get_mission(){
         return $this->mission;

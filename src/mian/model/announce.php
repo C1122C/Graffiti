@@ -22,5 +22,5 @@ class announce
     var $ask;
     var $date;
     var $marked;
-
+    var $state;
 }

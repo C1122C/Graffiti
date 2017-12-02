@@ -153,7 +153,9 @@ class user_info
 
         $mission=array();
         for($i=0;$i<count($tempstr);$i++){
-            $mis=$this->mission_con->announce_inq($tempstr[$i]);
+            $mis=$this->mission_con->announce_inq($tempstr[$i]->id);
+            $mis->mark=$tempstr[$i]->mark;
+            $mis->marked=$tempstr[$i]->marked;
             $mission[$i]=$mis;
         }
         $result=$this->my_tool->sort_by_date($mission);
@@ -181,13 +183,7 @@ class user_info
 
     function upload_inq($userid,$book){
         $tempstr=$this->user_dao->upload_inq($userid,$book);
-        $mission=array();
-        for($i=0;$i<count($tempstr);$i++){
-            $mis=$this->pic_con->picture_inq($tempstr[$i]);
-            $mission[$i]=$mis;
-        }
-        $result=$this->my_tool->sort_by_date($mission);
-        return $result;
+        return $tempstr;
     }
 
     function upload_inq_idonly($userid,$book){
@@ -252,17 +248,6 @@ class user_info
         return false;
     }
 
-    function album_inq($userid){
-        return $this->user_dao->album_inq($userid);
-    }
-
-    function album_add($userid,$albumid){
-        return $this->user_dao->announce_add($userid,$albumid);
-    }
-
-    function album_del($userid,$albumid){
-        return $this->user_dao->announce_del($userid,$albumid);
-    }
 
     function user_search($userid){
         return $this->tag_con->user_search($userid);

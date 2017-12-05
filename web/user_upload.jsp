@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/5
+  Time: 17:17
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>上传</title>
@@ -21,7 +28,6 @@
 
             var img;
             $("#picbtn").change(function(){
-                alert("in");
                 var url = null ;
                 var file=$(this)[0].files[0];
                 if (window.createObjectURL!=undefined) {
@@ -31,8 +37,8 @@
                 } else if (window.webkitURL!=undefined) {
                     url = window.webkitURL.createObjectURL(file) ;
                 }
-                alert(url+" ");
-                alert("ready to create");
+                //alert(url+" ");
+                //alert("ready to create");
                 var para = document.createElement("img");
                 para.setAttribute("src",url);
                 alert(url);
@@ -53,7 +59,7 @@
                 formData.append("album", album);
                 formData.append("description", description);
                 var request = new XMLHttpRequest();
-                request.open("POST", "http://localhost:8080/controller/");
+                request.open("POST", "http://localhost:8080/add_picture");
                 request.send(formData);
             });
         });
@@ -110,10 +116,10 @@
             </div>
         </div>
         <div class="up_button_div">
-            <a href="i_pie.html"><button class="cancle_button" hidefocus="true">
+            <a href="./i_pie.jsp"><button class="cancle_button" hidefocus="true">
                 <span>取 消</span>
             </button></a>
-            <a href="i_pie.html"><button class="pub_button" id="ok_now">
+            <a href="./i_pie.jsp"><button class="pub_button" id="ok_now">
                 <span>发 布</span>
             </button></a>
         </div>

@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/4
+  Time: 23:43
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Graffiti</title>
@@ -64,36 +71,42 @@
             $(".follow_button").click(function(){
                 $(this).parent().find(".disfollow_btn").show();
                 $(this).hide();
-                follow();
+                follow($(this).value);
             });
 
             $(".disfollow_btn").click(function(){
                 $(this).parent().find(".follow_button").show();
                 $(this).hide();
-                unfollow();
+                unfollow($(this).value);
             });
 
+            $(".like_num").click(function(){
+                var id=$(this).parent().parent().parent().parent().find(".img").find("img").value;
+                $(this).hide();
+                $(this).siblings().show();
+                republish(id);
+            });
         });
     </script>
 </head>
 <body>
 <div class="v_headbar">
-    <span class="logo"><a href="js/index.html"></a> </span>
+    <span class="logo"><a href="./index.jsp"></a> </span>
     <div class="v_topbar">
         <ul class="v_top_ul">
-            <li><a href="user_index.html" style="border-bottom-color:#fff">首页</a></li>
-            <li><a href="user_scan.html" >看图</a></li>
-            <li><a href="i_pie.html">爱拍</a></li>
-            <li><a href="find_a_partner.html" >约拍</a></li>
-            <li><a href="talk.html" >关注</a></li>
-            <li><a href="mine.html">消息</a></li>
+            <li><a href="./user_index.jsp" style="border-bottom-color:#fff">首页</a></li>
+            <li><a href="./user_scan.jsp" >看图</a></li>
+            <li><a href="./i_pie.jsp">爱拍</a></li>
+            <li><a href="./find_a_partner.jsp" >约拍</a></li>
+            <li><a href="./talk.jsp" >关注</a></li>
+            <li><a href="./mine.jsp">消息</a></li>
         </ul>
     </div>
 </div>
 
 <div class="wall">
     <div id="index_main" class="main_b">
-        <div id="inform" class="inform_div">
+        <div id="inform" class="inform_div" id="inform" style="display: none;">
             <div id="inform_window" class="inform_w">
                 <div class="inform_tag">
                     <div class="inform_title" style="display: block">
@@ -103,8 +116,8 @@
                     <div class="inform_body" style="display:block;">
                         <ul class="i_ul">
                             <li id="inform_title">
-                                <a href="mine.html">1条通知</a>
-                                <a href="mine.html">1条询问</a>
+                                <a href="mine.jsp" id="inform_num">1条通知</a>
+                                <a href="mine.jsp" id="ask_num">1条询问</a>
                             </li>
                         </ul>
                     </div>
@@ -113,7 +126,7 @@
         </div>
         <div class="list">
             <div class="portrait">
-                <a href="other_index.html" target="_blank">
+                <a href="other_index.jsp" target="_blank">
                     <img src="img/IMG_0004.JPG" width="65px" onclick="other_user_info()">
                 </a>
             </div>
@@ -141,7 +154,7 @@
                         </div>
                     </div>
                     <div class="fed_back">
-                        <div class="tag" style="width: 191px">
+                        <div class="tag" style="width: 191px;">
                             <span class="opti">摄影</span>
                             <span class="opti">生活</span>
                             <span class="opti">行路</span>
@@ -178,7 +191,7 @@
         </div>
         <div class="list1" style="display: none;">
             <div class="portrait">
-                <a href="other_index.html" target="_blank">
+                <a href="other_index.jsp" target="_blank">
                     <img src="img/IMG_0004.JPG" width="65px" onclick="other_user_info()">
                 </a>
             </div>
@@ -248,29 +261,29 @@
             <div class="menum">
                 <ul style="list-style: none">
                     <li style="border-color: #b2b2b2;">
-                        <a href="mine.html" class="mi">
+                        <a href="mine.jsp" class="mi">
                                     <span class="txt">
                                         <img src="./img/ask_s.png">
                                     </span>
                             <span class="txt">询问</span>
-                            <span class="new_inf">
+                            <span class="new_inf" id="newask">
                                         <img src="./img/new.png">
                                     </span>
                         </a>
                     </li>
                     <li style="border-color: #b2b2b2;">
-                        <a href="mine.html" class="mi">
+                        <a href="mine.jsp" class="mi">
                                     <span class="txt">
                                         <img src="./img/inform.png">
                                     </span>
                             <span class="txt">通知</span>
-                            <span class="new_inf">
+                            <span class="new_inf" id="newinf">
                                         <img src="./img/new.png">
                                     </span>
                         </a>
                     </li>
                     <li style="border-color: #b2b2b2;">
-                        <a href="user_info_mod.html" class="mi">
+                        <a href="user_info_mod.jsp" class="mi">
                                     <span class="txt">
                                         <img src="./img/person.png">
                                     </span>
@@ -284,7 +297,7 @@
             <div class="txt1"><span>猜你喜欢</span></div>
             <div>
                 <div class="like_head">
-                    <a href="" target="_blank" class="por">
+                    <a href="other_index.jsp" target="_blank" class="por">
                         <img src="./img/IMG_7965.JPG" width="100px" onclick="other_user_info()">
                     </a>
                     <div style="height: 35px"></div>
@@ -313,7 +326,7 @@
                     <div style="height: 35px"></div>
                     <a href=""style="margin-top: 40px;font-family:'Microsoft YaHei';font-size: 25px;" onclick="other_user_info()">橙子</a>
                 </div>
-                <a class="follow_button" onclick="follow()">
+                <a class="follow_button">
                     <span class="fol1"><img src="./img/add.png"></span>
                     <span class="fol1">关</span>
                     <span class="fol1">注</span>

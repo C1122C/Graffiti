@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/5
+  Time: 12:05
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>张三</title>
@@ -11,7 +18,7 @@
     <script src="./js/jquery-3.2.1.js"></script>
     <script type="text/javascript">
         window.onload=function(){
-            user_index();
+            load_info();
         };
 
         $(document).ready(function(){
@@ -64,13 +71,13 @@
             $(".follow_button").click(function(){
                 $(this).parent().find(".disfollow_btn").show();
                 $(this).hide();
-                follow();
+                follow($(this).value);
             });
 
             $(".disfollow_btn").click(function(){
                 $(this).parent().find(".follow_button").show();
                 $(this).hide();
-                unfollow();
+                unfollow($(this).value);
             });
 
         });

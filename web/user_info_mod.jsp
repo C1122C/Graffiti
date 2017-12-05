@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/5
+  Time: 20:16
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>个人信息</title>
@@ -39,7 +46,7 @@
                 goon=1;
             }
             if(goon==1){
-                register(username,password,special,interest,location,contact,description);
+                user_info_mod(username,password,special,interest,location,contact,description);
             }
         }
     </script>
@@ -76,9 +83,10 @@
         <textarea name="description" rows="3" cols="50"></textarea>
     </div>
     <div style="text-align: right; margin-right: 60px">
-        <span><a href="user_index.html"><input id="cancle"  value="取消" type="button"/></a></span>
-        <span><a href="user_index.html"><input id="register"  value="确定" type="button" onclick="check()"/></a></span>
+        <span><a href="./user_index.jsp"><input id="cancle"  value="取消" type="button"/></a></span>
+        <span><a><input id="register"  value="确定" type="button" onclick="check()"/></a></span>
     </div>
 </div>
 </body>
 </html>
+

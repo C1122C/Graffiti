@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/5
+  Time: 16:36
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>上传</title>
@@ -37,7 +44,8 @@
                 if(res==true){
                     $(this).parent().parent().parent().parent().parent().parent().hide();
                     $(this).parent().parent().parent().parent().parent().parent().next().hide();
-                    picture_delete();
+                    var pic=$(this).parent().parent().parent().find(".work").find("img").value;
+                    picture_delete(pic);
                 }
             });
 
@@ -60,59 +68,65 @@
                 var res=confirm("确定要删除这个相册吗？");
                 if(res==true){
                     $(this).parent().hide();
-                    album_delete();
+                    var name=$(this).parent().find(".name").innerHTML;
+                    album_delete(name);
                 }
-            })
+            });
+
+            $(".album").click(function(){
+                var name=$(this).find(".name").innerHTML;
+                album_pic(name);
+            });
 
         });
     </script>
 </head>
 <body>
 <div class="v_headbar">
-    <span class="logo"><a href="js/index.html"></a> </span>
+    <span class="logo"><a href="./index.jsp"></a> </span>
     <div class="v_topbar">
         <ul class="v_top_ul">
-            <li><a href="user_index.html">首页</a></li>
-            <li><a href="user_scan.html">看图</a></li>
-            <li><a href="user_upload.html"  style="border-bottom-color:#fff">爱拍</a></li>
-            <li><a href="find_a_partner.html" >约拍</a></li>
-            <li><a href="talk.html" >关注</a></li>
-            <li><a href="mine.html">消息</a></li>
+            <li><a href="./user_index.jsp">首页</a></li>
+            <li><a href="./user_scan.jsp">看图</a></li>
+            <li><a href="./i_pie.jsp"  style="border-bottom-color:#fff">爱拍</a></li>
+            <li><a href="./find_a_partner.jsp" >约拍</a></li>
+            <li><a href="./talk.jsp" >关注</a></li>
+            <li><a href="./mine.jsp">消息</a></li>
         </ul>
     </div>
 </div>
 <div style="height: 15px;"></div>
 <div style="height: 60px;margin-left: 175px;margin-bottom: 0px;margin-top: 20px">
-    <a href="album_create.html"><button class="pub_button" style="float: left;margin-left: 50px;"><span>新 相 册</span></button></a>
-    <a href="user_upload.html"><button class="pub_button" style="float: left;margin-left: 50px;"><span>新 图 片</span></button></a>
+    <a href="./album_create.jsp"><button class="pub_button" style="float: left;margin-left: 50px;"><span>新 相 册</span></button></a>
+    <a href="./user_upload.jsp"><button class="pub_button" style="float: left;margin-left: 50px;"><span>新 图 片</span></button></a>
 </div>
 <div class="wall" style="min-height:250px;">
     <div class="paper">
-        <div class="inner_paper">
-            <div class="album" onclick="album_pic()">
+        <div class="inner_paper" id="album_list">
+            <div class="album">
+                <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
+                <span class="operator"><img src="./img/delete.png"></span>
+                <span class="name">album1</span>
+            </div>
+            <div class="album">
                 <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
                 <span class="operator"><img src="./img/delete.png"></span>
                 <span>album1</span>
             </div>
-            <div class="album" onclick="album_pic()">
+            <div class="album">
                 <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
                 <span class="operator"><img src="./img/delete.png"></span>
-                <span>album1</span>
+                <span class="name">album1</span>
             </div>
-            <div class="album" onclick="album_pic()">
+            <div class="album">
                 <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
                 <span class="operator"><img src="./img/delete.png"></span>
-                <span>album1</span>
+                <span class="name">album1</span>
             </div>
-            <div class="album" onclick="album_pic()">
+            <div class="album">
                 <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
                 <span class="operator"><img src="./img/delete.png"></span>
-                <span>album1</span>
-            </div>
-            <div class="album" onclick="album_pic()">
-                <img src="./img/IMG_0004.JPG" width="180" height="180" style="z-index: 3">
-                <span class="operator"><img src="./img/delete.png"></span>
-                <span>album1</span>
+                <span class="name">album1</span>
             </div>
         </div>
         <div style="height: 20px;"></div>
@@ -120,10 +134,10 @@
 </div>
 <div style="height: 15px;"></div>
 <div style="padding-left:100px">
-    <div class="main_b" style="margin-left: 100px">
+    <div class="main_b" id="i_pie_list" style="margin-left: 100px">
         <div class="list">
             <div class="portrait">
-                <a href="other_index.html" target="_blank">
+                <a href="./other_index.jsp" target="_blank">
                     <img src="img/IMG_0004.JPG" width="65px" onclick="other_user_info()">
                 </a>
             </div>
@@ -192,7 +206,7 @@
         </div>
         <div class="list1" style="display: none;">
             <div class="portrait">
-                <a href="other_index.html" target="_blank">
+                <a href="./other_index.jsp" target="_blank">
                     <img src="img/IMG_0004.JPG" width="65px" onclick="other_user_info()">
                 </a>
             </div>

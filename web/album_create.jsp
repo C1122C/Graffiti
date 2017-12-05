@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/5
+  Time: 17:16
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <head>
@@ -55,10 +62,10 @@
             </div>
         </div>
         <div class="up_button_div">
-            <a href="i_pie.html"><button class="cancle_button" hidefocus="true">
+            <a href="./i_pie.jsp"><button class="cancle_button" hidefocus="true">
                 <span>取 消</span>
             </button></a>
-            <a href="i_pie.html"><button class="pub_button" style="margin-right: 60px;" onclick="check()">
+            <a href="./i_pie.jsp"><button class="pub_button" style="margin-right: 60px;" onclick="check()">
                 <span>创 建</span>
             </button></a>
         </div>

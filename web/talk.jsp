@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/5
+  Time: 18:56
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>票圈</title>
@@ -20,7 +27,9 @@
                 if(res==true){
                     $(this).hide();
                     $(this).siblings().show();
-                    unfollow();
+                    $(this).parent().find(".follow_button").show();
+                    $(this).hide();
+                    unfollow($(this).value);
                 }
             });
 
@@ -33,22 +42,22 @@
 </head>
 <body>
 <div class="v_headbar">
-    <span class="logo"><a href="js/index.html"></a> </span>
+    <span class="logo"><a href="./index.jsp"></a> </span>
     <div class="v_topbar">
         <ul class="v_top_ul">
-            <li><a href="user_index.html">首页</a></li>
-            <li><a href="user_scan.html" >看图</a></li>
-            <li><a href="i_pie.html">爱拍</a></li>
-            <li><a href="find_a_partner.html" >约拍</a></li>
-            <li><a href="talk.html"  style="border-bottom-color:#fff">关注</a></li>
-            <li><a href="mine.html">消息</a></li>
+            <li><a href="./user_index.jsp">首页</a></li>
+            <li><a href="./user_scan.jsp" >看图</a></li>
+            <li><a href="./i_pie.jsp">爱拍</a></li>
+            <li><a href="./find_a_partner.jsp" >约拍</a></li>
+            <li><a href="./talk.jsp"  style="border-bottom-color:#fff">关注</a></li>
+            <li><a href="./mine.jsp">消息</a></li>
         </ul>
     </div>
 </div>
 <div class="wall">
     <div class="t_board">
         <div class="t_people">
-            <div class="t_col">
+            <div class="t_col" id="f_col_0">
                 <div class="t_follow">
                     <div class="txt1"><span></span></div>
                     <div>
@@ -142,7 +151,7 @@
                     </div>
                 </div>
             </div>
-            <div class="t_col">
+            <div class="t_col" id="f_col_1">
                 <div class="t_follow">
                     <div class="txt1"><span></span></div>
                     <div>
@@ -236,7 +245,7 @@
                     </div>
                 </div>
             </div>
-            <div class="t_col">
+            <div class="t_col" id="f_col_2">
                 <div class="t_follow">
                     <div class="txt1"><span></span></div>
                     <div>
@@ -332,7 +341,7 @@
             </div>
         </div>
         <div class="t_group">
-            <ul style="padding: 0;margin: 0;width: 100%;cursor: hand;">
+            <ul style="padding: 0;margin: 0;width: 100%;cursor: hand;" id="group_ul">
                 <li><a>group1</a></li>
                 <li><a>group1</a></li>
                 <li><a>group1</a></li>

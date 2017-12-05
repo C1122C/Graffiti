@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/5
+  Time: 19:31
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>消息</title>
@@ -11,7 +18,7 @@
     <script src="./js/jquery-3.2.1.js"></script>
     <script type="text/javascript">
         window.onload=function(){
-            my_follow();
+            show_inq();
         };
 
         $(document).ready(function(){
@@ -44,15 +51,15 @@
 </head>
 <body>
 <div class="v_headbar">
-    <span class="logo"><a href="js/index.html"></a> </span>
+    <span class="logo"><a href="./index.jsp"></a> </span>
     <div class="v_topbar">
         <ul class="v_top_ul">
-            <li><a href="user_index.html">首页</a></li>
-            <li><a href="user_scan.html">看图</a></li>
-            <li><a href="i_pie.html">爱拍</a></li>
-            <li><a href="find_a_partner.html" >约拍</a></li>
-            <li><a href="talk.html" >关注</a></li>
-            <li><a href="mine.html" style="border-bottom-color:#fff">消息</a></li>
+            <li><a href="./user_index.jsp">首页</a></li>
+            <li><a href="./user_scan.jsp">看图</a></li>
+            <li><a href="./i_pie.jsp">爱拍</a></li>
+            <li><a href="./find_a_partner.jsp" >约拍</a></li>
+            <li><a href="./talk.jsp" >关注</a></li>
+            <li><a href="./mine.jsp" style="border-bottom-color:#fff">消息</a></li>
         </ul>
     </div>
 </div>
@@ -68,12 +75,12 @@
                 <span>CC</span>
             </h2>
         </div>
-        <div class="m_body">
+        <div class="m_body" id="m_list">
             <li>
                 <div class="inner_list">
                     <div class="m_tag">
                         <div class="m_pic">
-                            <a href="other_index.html" target="_blank">
+                            <a href="./other_index.jsp" target="_blank">
                                 <img src="./img/IMG_0004.JPG" width="64" height="64">
                             </a>
                             <span class="m_new"><img src="./img/new.png"></span>

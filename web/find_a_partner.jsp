@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 曹畅
+  Date: 2017/12/5
+  Time: 17:21
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>约拍</title>
@@ -17,51 +24,59 @@
         $(document).ready(function(){
 
             $(".a_cancle_btn").click(function(){
-                var res=confirm("确定删除这个公告吗？")
+                var res=confirm("确定删除这个公告吗？");
                 if(res==true){
+                    var id=$(this).name;
                     $(this).parent().parent().hide();
-                    announce_del();
+                    announce_del(id);
                 }
             });
 
-            $(".m_button").click(function(){
-                var res=confirm("确定修改公告？")
-                if(res==true){
-                    $(this).parent().parent().hide();
-                    announce_del();
-                    //go to new announce page
-                }
-            });
 
             $(".g_button").click(function(){
-                var res=confirm("确定揭榜？")
+                var res=confirm("确定揭榜？");
                 if(res==true){
                     $(this).parent().hide();
                     $(this).parent().next().show();
-                    announce_ans();
+                    var id=$(this).name;
+                    announce_ans(id);
+                    alert("已为您发送通知，请等候对方回复")
                 }
             });
 
             $(".con_button").click(function(){
                 $(this).parent().hide();
                 $(this).parent().prev().show();
-                announce_mark();
+                var id=$(this).name;
+                var mark=$(this).previousNode().value;
+                announce_mark(id,mark);
             });
 
+            $("#search").click(function(){
+                var type=document.getElementById("type").value;
+                var act_type=document.getElementById("act_type").value;
+                var ask=document.getElementById("ask").value;
+                var location=document.getElementById("loc").value;
+                var fare_down=document.getElementById("fare_down").value;
+                var fare_up=document.getElementById("fare_up").value;
+                var mark_down=document.getElementById("mark_down").value;
+                var mark_up=document.getElementById("mark_up").value;
+                search(type,act_type,ask,location,fare_down,fare_up,mark_down,mark_up);
+            });
         });
     </script>
 </head>
 <body>
 <div class="v_headbar">
-    <span class="logo"><a href="js/index.html"></a> </span>
+    <span class="logo"><a href="./index.jsp"></a> </span>
     <div class="v_topbar">
         <ul class="v_top_ul">
-            <li><a href="user_index.html">首页</a></li>
-            <li><a href="user_scan.html">看图</a></li>
-            <li><a href="i_pie.html">爱拍</a></li>
-            <li><a href="find_a_partner.html"  style="border-bottom-color:#fff">约拍</a></li>
-            <li><a href="talk.html" >关注</a></li>
-            <li><a href="mine.html">消息</a></li>
+            <li><a href="./user_index.jsp">首页</a></li>
+            <li><a href="./user_scan.jsp">看图</a></li>
+            <li><a href="./i_pie.jsp">爱拍</a></li>
+            <li><a href="./find_a_partner.jsp"  style="border-bottom-color:#fff">约拍</a></li>
+            <li><a href="./talk.jsp" >关注</a></li>
+            <li><a href="./mine.jsp">消息</a></li>
         </ul>
     </div>
 </div>
@@ -69,36 +84,36 @@
 <div class="wall">
     <div style="height: 60px;width:70%;margin-left: 120px;margin-bottom:0px;opacity: 4;background-color: #222;z-index: 5;">
         <div class="search_win">
-            <select class="select_bar" style="width: 160px">
+            <select class="select_bar" id="type" style="width: 160px">
                 <option>请你拍</option>
                 <option>找我拍</option>
             </select>
         </div>
         <div class="search_win">
-            <select class="select_bar" style="width: 160px">
+            <select class="select_bar" id="act_type" style="width: 160px">
                 <option>拍一次</option>
                 <option>长期合作</option>
             </select>
         </div>
-        <div class="search_win"><input maxlength="20" placeholder="要求" style="width: 200px;background-color: #fff;border-width: 0px;"></div>
-        <div style="float: right;border-width: 0px;"><button class="pub_button" style="float: left;margin-left: 20px;margin-top: 10px;border-radius: 5px;border-width: 0px;" onclick="search()"><span>搜 索</span></button></div>
+        <div class="search_win"><input id="ask" maxlength="20" placeholder="要求" style="width: 200px;background-color: #fff;border-width: 0px;"></div>
+        <div style="float: right;border-width: 0px;"><button class="pub_button" id="search" style="float: left;margin-left: 20px;margin-top: 10px;border-radius: 5px;border-width: 0px;"><span>搜 索</span></button></div>
     </div>
     <div style="height: 160px;width:70%;margin-left: 120px;margin-top:-15px;background-color: #fff;z-index: 6;border-top-width: 0;">
         <div class="search_down">
             <div class="search_tip"><span>位 置: </span></div>
-            <input maxlength="20" placeholder="我的位置" style="width: 200px;">
+            <input maxlength="20" id="loc" placeholder="我的位置" style="width: 200px;">
         </div>
         <div class="search_down">
             <div class="search_tip"><span>费 用 范 围: </span></div>
-            <input maxlength="10" style="width: 70px;">
-            <div class="search_tip" style="margin-top: 15px;"><span> — </span></div>
+            <input maxlength="10" id="fare_down" style="width: 70px;">
+            <div class="search_tip" id="fare_up" style="margin-top: 15px;"><span> — </span></div>
             <input maxlength="10" style="width: 70px;">
         </div>
         <div class="search_down">
             <div class="search_tip"><span>评 分 范 围: </span></div>
-            <input maxlength="10" style="width: 70px;">
+            <input maxlength="10" id="mark_down" style="width: 70px;">
             <div class="search_tip" style="margin-top: 15px;"><span> — </span></div>
-            <input maxlength="10" style="width: 70px;">
+            <input maxlength="10" id="mark_up" style="width: 70px;">
         </div>
     </div>
     <div style="width:70%;margin-left: 120px;margin-top:15px;">
@@ -107,7 +122,7 @@
         <button class="pub_button" style="float: left;border-radius: 5px;" onclick="my_part()"><span>我 参 与 的</span></button>
     </div>
     <div class="wall">
-        <div class="announce_col" style="margin-left: 120px;">
+        <div class="announce_col" id="a_col_0" style="margin-left: 120px;">
             <div class="a_card">
                 <div style="height: 20px;"></div>
                 <div class="p_head">
@@ -142,7 +157,6 @@
                     <p style="text-align: left;margin-left: 25px">两年摄影经验</p>
                 </div>
                 <div class="fed_back">
-                    <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="修 改" class="m_button">
                     <input type="submit" value="删 除" class="a_cancle_btn">
                 </div>
             </div>
@@ -188,13 +202,13 @@
                                     <span style="margin-left: -10px;margin-right: 0px;">活动评分(1~5)：</span>
                                 </a>
                             </span>
-                    <div class="c_input"style="margin-left:35px;width:30px;min-height:15px;line-height:15px;" contenteditable="true">
+                    <div class="c_input" style="margin-left:35px;width:30px;min-height:15px;line-height:15px;" contenteditable="true">
                     </div>
                     <input type="submit" style="font-size: 18px;font-weight: 600;width:80px;height:30px;float:right;margin-right: 20px;border-radius: 5px;margin-top: -10px;" value="确 定" class="con_button">
                 </div>
             </div>
         </div>
-        <div class="announce_col" style="margin-left: -10px;">
+        <div class="announce_col" id="a_col_1" style="margin-left: -10px;">
             <div class="a_card">
                 <div style="height: 20px;"></div>
                 <div class="p_head">

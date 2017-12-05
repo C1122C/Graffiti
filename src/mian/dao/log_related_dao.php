@@ -19,16 +19,18 @@ class log_related_dao
         $this->sql=new sql_helper();
     }
 
+    //获取密码，已测试
     function  get_password($username){
         $query="SELECT PASSWD FROM LOGIN WHERE ID=".$username.";";
         $result=$this->sql->query($query);
         $passwd="";
         while($row = $result->fetchArray(SQLITE3_ASSOC) ){
-            $passwd=$row['FOLLOW_ID'];
+            $passwd=$row['PASSWD'];
         }
         return $passwd;
     }
 
+    //注册，已测试
     function register($contact,$pswd){
         $query="SELECT * FROM USER WHERE CONTACT=".$contact.";";
         $result=$this->sql->query($query);
@@ -45,7 +47,10 @@ class log_related_dao
         while($row = $result->fetchArray(SQLITE3_ASSOC) ){
             $id=$row['USER'];
         }
-        $sqlstr="INSERT INTO LOGIN VALUES(".$id.",".$pswd.");";
+        $newid=$id+1;
+        $up="UPDATE NEW_ID SET USER=".$newid.";";
+        $ret = $this->sql->exec($up);
+        $sqlstr="INSERT INTO LOGIN(ID,PASSWD) VALUES (".$id.",".$pswd.");";
         $ret = $this->sql->exec($sqlstr);
         if(!$ret){
             return "FAIL";
@@ -54,13 +59,14 @@ class log_related_dao
         }
     }
 
+    //删除用户，已测试
     function del_account($userid){
-        $sqlstr="DROP FROM LOGIN WHERE ID=".$userid.";";
+        $sqlstr="DELETE FROM LOGIN WHERE ID=".$userid.";";
         $ret = $this->sql->exec($sqlstr);
         if(!$ret){
             return "FAIL";
         } else {
-            return "SUCCESSFUL";
+            return "SUCCESS";
         }
     }
 }

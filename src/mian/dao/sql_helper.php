@@ -11,10 +11,9 @@ namespace mian\dao;
 
 class sql_helper extends \SQLite3
 {
-    function __construct($filename = "Graffiti.db", $flags = null, $encryption_key = null)
+    function __construct()
     {
-        parent::__construct($filename, $flags, $encryption_key);
-        $this->open($filename);
+        $this->open('Graffiti.db');
     }
 
 }

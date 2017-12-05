@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 曹畅
-  Date: 2017/12/5
-  Time: 16:36
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -207,7 +200,7 @@
         <div class="list1" style="display: none;">
             <div class="portrait">
                 <a href="./other_index.jsp" target="_blank">
-                    <img src="img/IMG_0004.JPG" width="65px" onclick="other_user_info()">
+                    <img src="./img/IMG_0004.JPG" width="65px" onclick="other_user_info()">
                 </a>
             </div>
             <div class="content">

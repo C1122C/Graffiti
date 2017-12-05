@@ -21,60 +21,60 @@ class tag_info_dao
         $this->sql=new sql_helper();
     }
 
+    //获得搜索标签
     function get_search_tag($userid){
-        require_once "../model/tag.php";
         $tags=[];
         $index=0;
         $query="SELECT * FROM SEARCH_TAG WHERE USER_ID=".$userid.";";
         $result=$this->sql->query($query);
         while($row = $result->fetchArray(SQLITE3_ASSOC) ){
-            $tag=new tag();
-            $tag->userid=$row['USER_ID'];
-            $tag->tag=$row['TAG'];
-            $tag->date=$row['DTM'];
-            $tag->times=$row['TIMES'];
-            $tags[$index]=$tag;
+            $tags[$index]['user_id']=$row['USER_ID'];
+            $tags[$index]['tag']=$row['TAG'];
+            $tags[$index]['date']=$row['DTM'];
+            $tags[$index]['times']=$row['TIMES'];
             $index++;
 
         }
         return $tags;
     }
 
+    //获得相关发布标签
     function get_by_publish($tag){
         $tags=[];
         $index=0;
-        $query="SELECT * FROM PUBLISH_TAG WHERE TAG LIKE'%".$tag."%';";
+        $query="SELECT * FROM PUBLISH_TAG;";
         $result=$this->sql->query($query);
         while($row = $result->fetchArray(SQLITE3_ASSOC) ){
-            $tag=new tag();
-            $tag->userid=$row['USER_ID'];
-            $tag->tag=$row['TAG'];
-            $tag->date=$row['DTM'];
-            $tag->times=$row['TIMES'];
-            $tags[$index]=$tag;
-            $index++;
-
+            if(strpos($row['TAG'],$tag)>=0){
+                $tags[$index]['user_id']=$row['USER_ID'];
+                $tags[$index]['tag']=$row['TAG'];
+                $tags[$index]['date']=$row['DTM'];
+                $tags[$index]['times']=$row['TIMES'];
+                $index++;
+            }
         }
         return $tags;
     }
 
+    //添加搜索标签
     function search_tag_add($tag){
-        $sqlstr="INSERT INTO SEARCH_TAG VALUES(".$tag->userid.",".$tag->tag.",".$tag->date.",".$tag->times.");";
+        $sqlstr="INSERT INTO SEARCH_TAG VALUES(".$tag['userid'].",".$tag['tag'].",".$tag['date'].",".$tag['times'].");";
         $ret = $this->sql->exec($sqlstr);
         if(!$ret){
             return "FAIL";
         } else {
-            return "SUCCESSFUL";
+            return "SUCCESS";
         }
     }
 
+    //添加发布标签
     function publish_tag_add($tag){
-        $sqlstr="INSERT INTO PUBLISH_TAG VALUES(".$tag->userid.",".$tag->tag.",".$tag->date.",".$tag->times.");";
+        $sqlstr="INSERT INTO PUBLISH_TAG VALUES(".$tag['userid'].",".$tag['tag'].",".$tag['date'].",".$tag['times'].");";
         $ret = $this->sql->exec($sqlstr);
         if(!$ret){
             return "FAIL";
         } else {
-            return "SUCCESSFUL";
+            return "SUCCESS";
         }
     }
 }

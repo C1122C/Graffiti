@@ -14,7 +14,7 @@ function pic_search_keyword(keyword){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/picture_search.js",
+        url: "../src/main/picture_search.php",
         dataType: "json",
         data:{"key":keyword},
         success: function (result) {
@@ -27,7 +27,6 @@ function pic_search_keyword(keyword){
                     name.push(result[i].name);
                     pic.push(result[i].pic);
                     des.push(result[i].des);
-                    hot.push(result[i].hot);
                 }
                 for(var i=0;i<pic_id.length;i++){
                     var c=[];
@@ -37,7 +36,7 @@ function pic_search_keyword(keyword){
                     $.ajax({
                         type: "post",
                         async: false,
-                        url: "../src/main/get_comment.js",
+                        url: "../src/main/get_comment.php",
                         dataType: "json",
                         data:{"id":pic_id[i]},
                         success: function (result) {
@@ -251,26 +250,13 @@ function pic_search_keyword(keyword){
 }
 
 function thumb(id){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/thumb.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/add_thumb.js",
-        dataType: "json",
-        data: {"id_s": userid,
-            "id_f":id},
+        data: {"id": id,
+            "act":"up"},
         success: function (result) {
         },
         error:function (msg) {
@@ -279,26 +265,13 @@ function thumb(id){
 }
 
 function cancle_thumb(id){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/thumb.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/cancle_thumb.js",
-        dataType: "json",
-        data: {"id_s": userid,
-            "id_f":id},
+        data: {"id": id,
+            "act":"down"},
         success: function (result) {
         },
         error:function (msg) {
@@ -307,25 +280,13 @@ function cancle_thumb(id){
 }
 
 function comment(c){
-    var userid = [];
+    var pid=$(this).name;
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/add_comment.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/addcomment.js",
-        dataType: "json",
-        data: {"id_s": userid,
+        data: {"id": pid,
             "comment":c},
         success: function (result) {
         },
@@ -350,7 +311,7 @@ function hot_pic_user(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_hot_picture.js",
+        url: "../src/main/get_hot_picture.php",
         dataType: "json",
         success: function (result) {
             if (result) {
@@ -372,7 +333,7 @@ function hot_pic_user(){
                     $.ajax({
                         type: "post",
                         async: false,
-                        url: "../src/main/get_comment.js",
+                        url: "../src/main/get_comment.php",
                         dataType: "json",
                         data:{"id":pic_id[i]},
                         success: function (result) {
@@ -587,26 +548,12 @@ function hot_pic_user(){
 
 
 function republish(id){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/add_republish.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/add_republish.js",
-        dataType: "json",
-        data: {"id_s": userid,
-            "pid":id},
+        data: {"pid":id},
         success: function (result) {
         },
         error:function (msg) {

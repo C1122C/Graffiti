@@ -12,7 +12,7 @@ function search(ty,act_ty,as,loc,fare_down,fare_up,mark_down,mark_up){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/my_part.js",
+        url: "../src/main/announce_search.php",
         dataType: "json",
         data: {"type": ty,
         "act_type":act_ty,
@@ -148,26 +148,13 @@ function my_announce(){
     var location=[];
     var fare=[];
     var ask=[];
-    var userid = [];
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_user.js",
-        dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
-    });
 
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/my_announce.js",
+        url: "../src/main/my_announce.php",
         dataType: "json",
-        data: {"id": userid},
+        data: {"type": "OWN"},
         success: function (result) {
             if (result) {
                 var tar = document.getElementById("a_col_0");
@@ -300,26 +287,13 @@ function my_part(){
     var location=[];
     var fare=[];
     var ask=[];
-    var userid = [];
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_user.js",
-        dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
-    });
 
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/my_part.js",
+        url: "../src/main/my_announce.php",
         dataType: "json",
-        data: {"id": userid},
+        data: {"type": "PART"},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
@@ -465,7 +439,7 @@ function announce(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/recent_announce.js",
+        url: "../src/main/recent_announce.php",
         dataType: "json",
         success: function (result) {
             if (result) {
@@ -585,7 +559,7 @@ function announce_del(aid){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/announce_del.js",
+        url: "../src/main/announce_del.php",
         dataType: "json",
         data: {"aid": aid},
         success: function (result) {
@@ -599,26 +573,12 @@ function announce_del(aid){
 }
 
 function announce_ans(aid){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/answer_announce.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/answer_announce.js",
-        dataType: "json",
-        data: {"userid": userid,
-            "aid":aid},
+        data: {"aid":aid},
         success: function (result) {
         },
         error:function (msg) {
@@ -627,26 +587,12 @@ function announce_ans(aid){
 }
 
 function announce_mark(aid,mark){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/mark_announce.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/mark_announce.js",
-        dataType: "json",
-        data: {"userid": userid,
-            "aid":aid,
+        data: {"aid":aid,
         "mark":mark},
         success: function (result) {
         },
@@ -656,35 +602,21 @@ function announce_mark(aid,mark){
 }
 
 function new_announce(type,act_type,ask,location,fare,mark){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/my_part.js",
+        url: "../src/main/new_announce.php",
         dataType: "json",
         data: {"type": type,
             "act_type":act_type,
             "ask":ask,
             "location":location,
             "fare":fare,
-            "mark":mark,
-        "userid":userid},
+            "mark":mark},
         success: function (result) {
             alert("创建成功！");
         },error:function (msg) {
-            alert("msg"+msg);
+            //alert("msg"+msg);
         }
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_user.js",
-        dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            alert("msg"+msg);
-        },
     });
 }

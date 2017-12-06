@@ -5,7 +5,7 @@ function login(name,password) {
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/login.js",
+        url: "localhost:8080/src/main/login.php",
         dataType: "json",
         data: {"id": id,
         "pwd":pwd},
@@ -31,7 +31,7 @@ function register(usern,userp,users,useri,userl,userc,userd){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/register.js",
+        url: "localhost:8080/src/main/register.php",
         dataType: "json",
         data: {"name": name,
             "pwd":pwd,
@@ -44,16 +44,15 @@ function register(usern,userp,users,useri,userl,userc,userd){
             if (result[0].answer == "Fail") {
                 alert("请再试一次");
             }
-            else if(result[0].answer == "Success"){
-                alert("注册成功！请登录")
-                window.location.href='./index.jsp';
+            else{
+                alert("注册成功！您的账号是："+result[0].answer);
+                window.location.href='./index.html';
             }
         }
     });
 };
 
 function user_index(){
-    var userid = [];
     var inform_num=[];
     var ask_num=[];
     var head=[];
@@ -75,21 +74,8 @@ function user_index(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "localhost:8080/src/main/get_message_num.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_message_num.js",
-        dataType: "json",
-        data:{"id":userid},
         success: function (result) {
             if (result) {
                 inform_num.push(result[0].inform);
@@ -105,7 +91,7 @@ function user_index(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_index_pic.js",
+        url: "localhost:8080/src/main/get_index_pic.php",
         dataType: "json",
         data:{"id":userid},
         success: function (result) {
@@ -132,7 +118,7 @@ function user_index(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_guess.js",
+        url: "localhost:8080/src/main/get_guess.php",
         dataType: "json",
         data:{"id":userid},
         success: function (result) {
@@ -150,7 +136,7 @@ function user_index(){
                     $.ajax({
                         type: "post",
                         async: false,
-                        url: "../src/main/get_comment.js",
+                        url: "../src/main/get_comment.php",
                         dataType: "json",
                         data:{"id":pic_id[i]},
                         success: function (result) {
@@ -580,7 +566,7 @@ function other_user_info(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/send_check_id.js",
+        url: "../src/main/send_check_id.php",
         dataType: "json",
         data: {"id": id},
         success: function (result) {
@@ -593,7 +579,6 @@ function other_user_info(){
 };
 
 function load_info(){
-    var userid = [];
     var head=[];
     var id=[];
     var name=[];
@@ -613,24 +598,12 @@ function load_info(){
     var location=[];
     var fare=[];
     var ask=[];
+
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_check_id.js",
+        url: "../src/main/get_other_index.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_index_pic.js",
-        dataType: "json",
-        data:{"id":userid},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
@@ -652,7 +625,7 @@ function load_info(){
                     $.ajax({
                         type: "post",
                         async: false,
-                        url: "../src/main/get_comment.js",
+                        url: "../src/main/get_comment.php",
                         dataType: "json",
                         data:{"id":pic_id[i]},
                         success: function (result) {
@@ -993,13 +966,13 @@ function load_info(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/my_part.js",
+        url: "../src/main/my_part.php",
         dataType: "json",
         data: {"id": userid},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
-                    a_id.push(result[i].aid);
+                    a_id.push(result[i].id);
                     type.push(result[i].type);
                     author.push(result[i].author);
                     author_head.push(result[i].head);
@@ -1092,26 +1065,14 @@ function load_info(){
 }
 
 function follow(id){
-    var userid = [];
+    var group=prompt("请输入分组：","");
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/add_follow.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/addfollow.js",
-        dataType: "json",
-        data: {"id_s": userid,
-            "id_f":id},
+        data: {"id":id,
+        "group":group},
         success: function (result) {
         },
         error:function (msg) {
@@ -1120,26 +1081,12 @@ function follow(id){
 };
 
 function unfollow(id){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/unfollow.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/addfollow.js",
-        dataType: "json",
-        data: {"id_s": userid,
-            "id_f":id},
+        data: {"id":id},
         success: function (result) {
         },
         error:function (msg) {
@@ -1151,7 +1098,7 @@ function user_info_mod(username,password,special,interest,location,contact,descr
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/user_info_mod.js",
+        url: "../src/main/user_info_mod.php",
         dataType: "json",
         data: {"name": name,
             "pwd":pwd,
@@ -1173,31 +1120,18 @@ function user_info_mod(username,password,special,interest,location,contact,descr
 }
 
 function my_work(){
-    var userid = [];
     var album=[];
     var a_pic=[]
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
-        dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_album.js",
+        url: "../src/main/get_album.php",
         dataType: "json",
         data:{"id":userid},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
-                    album.push(result[i].name);
+                    album.push(result[i].album);
                     a_pic.push(result[i].pic);
                 }
                 for(var i=0;i<album.length;i++){
@@ -1233,7 +1167,6 @@ function my_work(){
 }
 
 function album_pic(n){
-    var userid = [];
     var head=[];
     var name=[];
     var pic=[];
@@ -1249,22 +1182,9 @@ function album_pic(n){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/get_my_picture.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_mypicture.js",
-        dataType: "json",
-        data:{"id":userid,
-        "album":n},
+        data:{"album":n},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
@@ -1285,7 +1205,7 @@ function album_pic(n){
                     $.ajax({
                         type: "post",
                         async: false,
-                        url: "../src/main/get_comment.js",
+                        url: "../src/main/get_comment.php",
                         dataType: "json",
                         data:{"id":pic_id[i]},
                         success: function (result) {
@@ -1627,26 +1547,12 @@ function album_pic(n){
 }
 
 function album_delete(name){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/album_delete.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/album_delete.js",
-        dataType: "json",
-        data: {"id_s": userid,
-            "name":name},
+        data: {"name":name},
         success: function (result) {
         },
         error:function (msg) {
@@ -1655,26 +1561,12 @@ function album_delete(name){
 }
 
 function picture_delete(pid){
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/delete_picture.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/delete_picture.js",
-        dataType: "json",
-        data: {"userid": userid,
-            "picid":pid},
+        data: {"picid":pid},
         success: function (result) {
         },
         error:function (msg) {
@@ -1688,7 +1580,7 @@ function album_create(name,tag,des){
     $.ajax({
         type: "post",
         async: true,
-        url: "../controller/albumadd.js",
+        url: "../controller/album_add.php",
         dataType: "json",
         data: {"name": name,
             "tag": tag,
@@ -1703,7 +1595,7 @@ function album_create(name,tag,des){
             else {
                 alert("fail");
             }
-            if(result=="SUCCESSFUL"){
+            if(result=="SUCCESS"){
                 alert("创建成功！");
             }
         },
@@ -1714,7 +1606,6 @@ function album_create(name,tag,des){
 };
 
 function my_follow(){
-    var userid = [];
     var group=[];
     var like_head=[];
     var like_name=[];
@@ -1723,21 +1614,8 @@ function my_follow(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/get_my_group.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_my_group.js",
-        dataType: "json",
-        data:{"id":userid},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
@@ -1754,10 +1632,9 @@ function my_follow(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_follow.js",
+        url: "../src/main/get_follow.php",
         dataType: "json",
-        data:{"id":userid,
-        "group":group[0]},
+        data:{"group":group[0]},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
@@ -1871,23 +1748,10 @@ function group_change(){
     var like_head=[];
     var like_name=[];
     var like_id=[];
-    var userid = [];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
-        dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_follow.js",
+        url: "../src/main/get_follow.php",
         dataType: "json",
         data:{"id":userid,
             "group":name},

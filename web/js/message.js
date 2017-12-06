@@ -1,29 +1,15 @@
 function show_inq(){
-    var userid = [];
     var mid=[];
     var partner_head=[];
     var partner_id=[];
     var partner_name=[];
     var content=[];
-    var isread=[];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/get_inq.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_inq.js",
-        dataType: "json",
-        data:{"id":userid},
+        data: {"type":"inq"},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
@@ -120,31 +106,17 @@ function show_inq(){
 }
 
 function show_inform(){
-    var userid = [];
     var mid=[];
     var partner_head=[];
     var partner_id=[];
     var partner_name=[];
     var content=[];
-    var isread=[];
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/get_user.js",
+        url: "../src/main/get_inq.php",
         dataType: "json",
-        success: function (result) {
-            userid = result[0].user;
-        },
-        error:function (msg) {
-            //alert("msg"+msg);
-        },
-    });
-    $.ajax({
-        type: "post",
-        async: false,
-        url: "../src/main/get_inf.js",
-        dataType: "json",
-        data:{"id":userid},
+        data: {"type":"inf"},
         success: function (result) {
             if (result) {
                 for (var i = 0; i < result.length; i++) {
@@ -215,7 +187,7 @@ function not_new(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/readmessage.js",
+        url: "../src/main/read_message.php",
         dataType: "json",
         data: {"id": id},
         success: function (result) {
@@ -230,9 +202,10 @@ function send_agree_inform(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/agree_inq.js",
+        url: "../src/main/answer_inq.php",
         dataType: "json",
-        data: {"id": id},
+        data: {"id": id,
+        "answer":"1"},
         success: function (result) {
         },
         error:function (msg) {
@@ -245,9 +218,10 @@ function send_refuse_inform(){
     $.ajax({
         type: "post",
         async: false,
-        url: "../src/main/refuse_inq.js",
+        url: "../src/main/answer_inq.php",
         dataType: "json",
-        data: {"id": id},
+        data: {"id": id,
+            "answer":"0"},
         success: function (result) {
         },
         error:function (msg) {
